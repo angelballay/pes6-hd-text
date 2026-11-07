@@ -191,10 +191,9 @@ Found a screen where the text is still blurry? Open an [issue](https://github.co
 
 I'm **pitycharly**, an Argentine software developer who makes mods for PES 6. I want to help keep this game alive, and I'd love to see my mods inside the patches people already play. I build them as Kitserver modules and keep them compatible with all the existing ones.
 
-My other projects:
+My other mod:
 
 - **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)** (v1.1): first-time passes no longer die on the pitch. A faster pass impulse makes the ball roll faster and more smoothly. Tested on the original PES 6 and on PES 6 The Den Patch 2026. [Video](https://www.youtube.com/watch?v=KKfPKn4rNsg) · [Download](https://www.mediafire.com/file/fwqcw1omr98uekw/1.1_pes6_game_physics_mod.zip/file)
-- **[wepes3d](https://github.com/angelballay/wepes3d)**: import new 3D models into PES / Winning Eleven on PS2 (trophies, faces, hair). An .obj (Blender) ↔ .bin converter that also exports PES6 PC models to bring them to the PS2. Pure Python.
 
 ---
 
@@ -219,4 +218,4 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 ¿Una pantalla donde el texto se sigue viendo borroso? Abrí un [issue](https://github.com/angelballay/pes6-hd-text/issues) con una captura.
 
-Soy **pitycharly**, desarrollador de software argentino, y hago mods para PES 6 para mantenerlo vivo. Mis otros proyectos: **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)**, para que los pases al primer toque no se mueran ([video](https://www.youtube.com/watch?v=KKfPKn4rNsg)), y **[wepes3d](https://github.com/angelballay/wepes3d)**, para importar modelos 3D (trofeos, caras, pelo) a PES / Winning Eleven de PS2.
+Soy **pitycharly**, desarrollador de software argentino, y hago mods para PES 6 para mantenerlo vivo. Mi otro mod: **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)**, para que los pases al primer toque no se mueran ([video](https://www.youtube.com/watch?v=KKfPKn4rNsg)).
