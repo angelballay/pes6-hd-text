@@ -8,15 +8,90 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 ## Before / after
 
+![Zoomed before / after of the player list in Edit Player](images/zoom-comparison.png)
+
+*Zoomed crop of the Edit Player screen: same game, same screen, left without the mod and right with it.*
+
+### Original PES 6
+
+**Edit player**
+
 | Before | After |
 |---|---|
-| ![Before](images/before.png) | ![After](images/after.png) |
+| ![Edit player, before](images/original/edit-player-before.png) | ![Edit player, after](images/original/edit-player-after.png) |
+
+<details>
+<summary><b>More screens: original PES 6</b> (edit menu, team selection, match settings, line-up, pause menu)</summary>
+
+**Edit menu**
+
+| Before | After |
+|---|---|
+| ![Edit menu, before](images/original/edit-menu-before.png) | ![Edit menu, after](images/original/edit-menu-after.png) |
+
+**Team selection**
+
+| Before | After |
+|---|---|
+| ![Team selection, before](images/original/team-select-before.png) | ![Team selection, after](images/original/team-select-after.png) |
+
+**Match settings**
+
+| Before | After |
+|---|---|
+| ![Match settings, before](images/original/match-settings-before.png) | ![Match settings, after](images/original/match-settings-after.png) |
+
+**Line-up**
+
+| Before | After |
+|---|---|
+| ![Line-up, before](images/original/lineup-before.png) | ![Line-up, after](images/original/lineup-after.png) |
+
+**Pause menu (in match)**
+
+| Before | After |
+|---|---|
+| ![Pause menu (in match), before](images/original/pause-menu-before.png) | ![Pause menu (in match), after](images/original/pause-menu-after.png) |
+
+</details>
+
+### PES 6 The Den Patch 2026 (its own font)
+
+<details>
+<summary><b>Screens: The Den Patch 2026</b> (match settings, edit menu, line-up, pause menu)</summary>
+
+**Match settings**
+
+| Before | After |
+|---|---|
+| ![Match settings, before](images/den/match-settings-before.png) | ![Match settings, after](images/den/match-settings-after.png) |
+
+**Edit menu**
+
+| Before | After |
+|---|---|
+| ![Edit menu, before](images/den/edit-menu-before.png) | ![Edit menu, after](images/den/edit-menu-after.png) |
+
+**Line-up**
+
+| Before | After |
+|---|---|
+| ![Line-up, before](images/den/lineup-before.png) | ![Line-up, after](images/den/lineup-after.png) |
+
+**Pause menu (in match)**
+
+| Before | After |
+|---|---|
+| ![Pause menu (in match), before](images/den/pause-menu-before.png) | ![Pause menu (in match), after](images/den/pause-menu-after.png) |
+
+</details>
 
 ## What it does
 
 - Menus, player names, team names and titles are drawn **sharp** instead of blurry and stretched.
 - **Same fonts, same positions:** nothing moves, nothing gets cut, and the original PES 6 style stays.
 - **Works with whatever font your patch uses.** PES 6 The Den Patch 2026 ships its own font and gets sharp too.
+- **Any game language.** It upscales whatever text the game draws, so it doesn't depend on the language (tested in Spanish).
 - **No settings and no files written.** Drop it in, add one line to `kload.cfg`, play.
 
 ## How it works
@@ -76,6 +151,10 @@ PES6 HD Text is a plain Kitserver module that runs next to whatever your patch a
 
 And let me know if anything conflicts (open an [issue](https://github.com/angelballay/pes6-hd-text/issues)).
 
+## Thanks
+
+Thanks to **The Den** for *PES 6 The Den Patch 2026*, the patch where PES6 HD Text was tested next to 26 other Kitserver modules and with its own font.
+
 ## License
 
 [MIT](LICENSE), with one extra condition: any patch, mod or project that includes or reuses PES6 HD Text, fully or partly, must show this line in its credits: *"Mod PES6 HD Text Original creado por PityCharly."*
@@ -111,7 +190,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **Desinstalar:** borrá la línea, volvé `DLL.num` a su valor anterior y borrá la DLL.
 
-**Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha.
+**Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026, en español; como agranda el texto que dibuja el juego, no depende del idioma. Gracias a **The Den** por *PES 6 The Den Patch 2026*. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha.
 
 **Licencia:** [MIT](LICENSE) con una condición de atribución. Si lo incluís en un parche, poné en los créditos: *"Mod PES6 HD Text Original creado por PityCharly."*
 
