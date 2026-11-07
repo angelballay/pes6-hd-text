@@ -70,7 +70,15 @@ Since it only touches text, it should sit nicely next to texture packs and other
 
 ## For patch makers
 
-PES6 HD Text is a plain Kitserver module that runs next to whatever your patch already has. If you want to include it in your patch, go ahead, and let me know if anything conflicts (open an [issue](https://github.com/angelballay/pes6-hd-text/issues)).
+PES6 HD Text is a plain Kitserver module that runs next to whatever your patch already has. If you want to include it in your patch, go ahead: just add this line to your patch credits, as the [license](LICENSE) requires:
+
+> Mod PES6 HD Text Original creado por PityCharly.
+
+And let me know if anything conflicts (open an [issue](https://github.com/angelballay/pes6-hd-text/issues)).
+
+## License
+
+[MIT](LICENSE), with one extra condition: any patch, mod or project that includes or reuses PES6 HD Text, fully or partly, must show this line in its credits: *"Mod PES6 HD Text Original creado por PityCharly."*
 
 ## Feedback
 
@@ -104,6 +112,8 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 **Desinstalar:** borrá la línea, volvé `DLL.num` a su valor anterior y borrá la DLL.
 
 **Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha.
+
+**Licencia:** [MIT](LICENSE) con una condición de atribución. Si lo incluís en un parche, poné en los créditos: *"Mod PES6 HD Text Original creado por PityCharly."*
 
 ¿Una pantalla donde el texto se sigue viendo borroso? Abrí un [issue](https://github.com/angelballay/pes6-hd-text/issues) con una captura.
 
