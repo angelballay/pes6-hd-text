@@ -12,7 +12,31 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 *Zoomed crop of the Edit Player screen: same game, same screen, left without the mod and right with it.*
 
-### Original PES 6
+### Zoomed comparisons
+
+Same zone of the same screen, before and after. The "after" capture is the one rescaled to line them up, so the comparison never favours the mod.
+
+**Original PES 6**
+
+![Pause menu, zoomed: before and after](images/zoom/original-pause-menu.png)
+
+![Edit menu, zoomed: before and after](images/zoom/original-edit-menu.png)
+
+![Match settings, zoomed: before and after](images/zoom/original-match-settings.png)
+
+![Line-up, zoomed: before and after](images/zoom/original-lineup.png)
+
+**PES 6 The Den Patch 2026 (its own font)**
+
+![The Den Patch, match settings, zoomed: before and after](images/zoom/den-match-settings.png)
+
+![The Den Patch, edit menu, zoomed: before and after](images/zoom/den-edit-menu.png)
+
+![The Den Patch, line-up, zoomed: before and after](images/zoom/den-lineup.png)
+
+![The Den Patch, pause menu, zoomed: before and after](images/zoom/den-pause-menu.png)
+
+### Full screens: original PES 6
 
 **Edit player**
 
@@ -55,7 +79,7 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 </details>
 
-### PES 6 The Den Patch 2026 (its own font)
+### Full screens: PES 6 The Den Patch 2026
 
 <details>
 <summary><b>Screens: The Den Patch 2026</b> (match settings, edit menu, line-up, pause menu)</summary>
@@ -167,11 +191,10 @@ Found a screen where the text is still blurry? Open an [issue](https://github.co
 
 I'm **pitycharly**, an Argentine software developer who makes mods for PES 6. I want to help keep this game alive, and I'd love to see my mods inside the patches people already play. I build them as Kitserver modules and keep them compatible with all the existing ones.
 
-My other mod:
+My other projects:
 
-- **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)** (v1.1): first-time passes no longer die on the pitch. A faster pass impulse makes the ball roll faster and more smoothly. [Video](https://www.youtube.com/watch?v=KKfPKn4rNsg) · [Download](https://www.mediafire.com/file/fwqcw1omr98uekw/1.1_pes6_game_physics_mod.zip/file)
-
-Both mods are tested on the original PES 6 and on PES 6 The Den Patch 2026.
+- **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)** (v1.1): first-time passes no longer die on the pitch. A faster pass impulse makes the ball roll faster and more smoothly. Tested on the original PES 6 and on PES 6 The Den Patch 2026. [Video](https://www.youtube.com/watch?v=KKfPKn4rNsg) · [Download](https://www.mediafire.com/file/fwqcw1omr98uekw/1.1_pes6_game_physics_mod.zip/file)
+- **[wepes3d](https://github.com/angelballay/wepes3d)**: import new 3D models into PES / Winning Eleven on PS2 (trophies, faces, hair). An .obj (Blender) ↔ .bin converter that also exports PES6 PC models to bring them to the PS2. Pure Python.
 
 ---
 
@@ -196,4 +219,4 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 ¿Una pantalla donde el texto se sigue viendo borroso? Abrí un [issue](https://github.com/angelballay/pes6-hd-text/issues) con una captura.
 
-Soy **pitycharly**, desarrollador de software argentino, y hago mods para PES 6 para mantenerlo vivo. Mi otro mod: **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)**, para que los pases al primer toque no se mueran ([video](https://www.youtube.com/watch?v=KKfPKn4rNsg)).
+Soy **pitycharly**, desarrollador de software argentino, y hago mods para PES 6 para mantenerlo vivo. Mis otros proyectos: **[Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod)**, para que los pases al primer toque no se mueran ([video](https://www.youtube.com/watch?v=KKfPKn4rNsg)), y **[wepes3d](https://github.com/angelballay/wepes3d)**, para importar modelos 3D (trofeos, caras, pelo) a PES / Winning Eleven de PS2.
