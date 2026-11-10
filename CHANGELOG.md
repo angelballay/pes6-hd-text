@@ -11,10 +11,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - **HD fonts.** With a high-resolution text font installed, the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
-- **18 HD fonts** in `Kitserver\GDB\fonts`, all 4x:
+- **19 HD fonts** in `Kitserver\GDB\fonts`, all 4x:
   - `HD_original_font` keeps the look of the original PES 6 font (based on work by SimoneZ).
   - Clean sans: `HD_barlow_condensed`, `HD_dosis`, `HD_fira_sans`, `HD_humanist`, `HD_kanit`, `HD_montserrat`, `HD_oswald`, `HD_rubik`, `HD_semi_condensed`, `HD_titillium`.
   - Techno: `HD_chakra_petch`, `HD_rajdhani`, `HD_futuristic`.
+  - Sports: `HD_teko` (condensed, in the style of TV match graphics).
   - Eye-catching: `HD_pixel` (retro arcade), `HD_marker` (hand-written marker), `HD_retro` (rounded retro), `HD_stencil` (military stencil).
 - **`hdtext.exe`, a settings tool** that goes in the Kitserver folder:
   - Two modes: HD (mod on) and Original (mod off).
@@ -24,7 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - It warns you when `afs2fs.dll` is not loaded in `kload.cfg`, because the game would not use the font.
 - **Backups.** Every font the tool replaces is kept in `Kitserver\GDB\fonts\backup`, one folder per date and time.
 - **Going back to your previous font.** The font you had before PES6 HD Text (for example your patch's font) is saved the first time it is replaced, and it shows in the list as "Font before PES6 HD Text". Original mode puts it back.
-- **`pes6_hd_text.cfg` settings file** with `mode = hd` or `mode = original`. The tool writes it; the DLL reads it when the game starts.
+- **`hdtext.cfg` settings file** with `mode = hd` or `mode = original`. The tool writes it; the DLL reads it when the game starts.
 - **Support for HD fonts made by modders** at 2x, 3x or 4x (the DLL also accepts other scales) and with grey, coloured or black-outlined palettes, for the text font and for the other game fonts.
 
 ### Changed
@@ -40,7 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Outlined menu text** gets an outline drawn around the sharp letter, with the same thickness as the game's.
 - **With 4x HD fonts (all the included ones) the game's letter-pair spacing table is turned off,** so letters no longer stick together (for example in "Eto'o").
 - **Menus load more smoothly.** Sharp copies are cached: up to 64 MB with the game's own fonts, plus up to 64 MB more with HD fonts.
-- **The DLL now has settings** (`pes6_hd_text.cfg`) instead of none.
+- **The DLL now has settings** (`hdtext.cfg`) instead of none.
 
 ### Fixed
 
