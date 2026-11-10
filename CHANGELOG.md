@@ -11,12 +11,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - **HD fonts.** With a high-resolution text font installed, the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
-- **19 HD fonts** in `Kitserver\GDB\fonts`, all 4x:
+- **35 HD fonts** in `Kitserver\GDB\fonts`, all 4x:
   - `HD_original_font` keeps the look of the original PES 6 font (based on work by SimoneZ).
   - Clean sans: `HD_barlow_condensed`, `HD_dosis`, `HD_fira_sans`, `HD_humanist`, `HD_kanit`, `HD_montserrat`, `HD_oswald`, `HD_rubik`, `HD_semi_condensed`, `HD_titillium`.
-  - Techno: `HD_chakra_petch`, `HD_rajdhani`, `HD_futuristic`.
+  - Techno: `HD_chakra_petch`, `HD_rajdhani`, `HD_futuristic`, `HD_squared`, `HD_wide`.
   - Sports: `HD_teko` (condensed, in the style of TV match graphics).
-  - Eye-catching: `HD_pixel` (retro arcade), `HD_marker` (hand-written marker), `HD_retro` (rounded retro), `HD_stencil` (military stencil).
+  - Rounded and light: `HD_dynapuff`, `HD_marhey`, `HD_snowflake`, `HD_train` and `HD_hachimaru` (these two also draw their own Japanese letters).
+  - Eye-catching: `HD_pixel` (retro arcade), `HD_marker` (hand-written marker), `HD_retro` (rounded retro), `HD_stencil` (military stencil), `HD_luckiest` (comic book), `HD_shrikhand` (bold retro script), `HD_kablammo` (cartoon), `HD_neon_lines` (neon tubes), `HD_speed` (speed lines), `HD_nabla` (blocky 3D), `HD_storybook` (storybook), `HD_tokyo_zoo` (small caps), `HD_poster_deco` (art deco poster).
 - **`hdtext.exe`, a settings tool** that goes in the Kitserver folder:
   - Two modes: HD (mod on) and Original (mod off).
   - A font list with a preview drawn with the font's own letters.
