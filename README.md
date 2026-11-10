@@ -8,7 +8,7 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 ## What's new in 1.0.1
 
-- **HD fonts:** with an HD font the text is drawn at the resolution of your screen, so it stays crisp at 1080p, 1440p and 4K.
+- **HD fonts:** with an HD font the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
 - **18 HD fonts included:** `HD_original_font` keeps the original PES 6 look, and 17 more change the style, from clean sans to pixel, marker or stencil.
 - **`pes6_hd_text.exe`, a settings tool:** turn the mod on or off, pick a font with a preview, add your own fonts and go back to the font you had before.
 - **Cleaner letters with the game's own fonts:** thin fonts keep their strokes, broken letters are repaired and round letters come out symmetric.
@@ -21,13 +21,13 @@ Full list in the [changelog](CHANGELOG.md).
 
 Every image compares the same screen. "No mod" is the game without the mod; only the modded side is rescaled to line them up, so the comparison never favours the mod.
 
-**PES 6 The Den Patch 2026, line-up:** no mod, its own font made sharp, and an HD font
+**Original PES 6, line-up:** no mod, the game font sharpened 2x, and HD_original_font
 
-![The Den Patch 2026, line-up: no mod, its own font made sharp, HD_stencil](images/1.0.1/den-lineup.png)
+![Original PES 6, line-up: no mod, game font sharpened 2x, HD_original_font](images/1.0.1/original-lineup.png)
 
-**Original PES 6, line-up:** no mod, the game font made sharp, and HD_original_font
+**PES 6 The Den Patch 2026, line-up:** no mod, its own font sharpened 2x, and HD_stencil (one of the 18 HD fonts)
 
-![Original PES 6, line-up: no mod, game font made sharp, HD_original_font](images/1.0.1/original-lineup.png)
+![The Den Patch 2026, line-up: no mod, its own font sharpened 2x, HD_stencil](images/1.0.1/den-lineup.png)
 
 **One screen, eight looks**
 
@@ -208,6 +208,8 @@ The game recreates many of these textures over and over, so the upscaled copies 
 
 Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with Kitserver 6 and with most patches). Don't have it yet? [Kitserver 6](https://www.mediafire.com/file/ljbcnczm893g1b6/kitserver.rar/file)
 
+**Updating from 1.0:** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `pes6_hd_text.exe` and press **Apply**.
+
 1. Download `PES6_HD_Text_v1.0.1.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
 2. Open `kload.cfg` with Notepad and add a line after the last `DLL.N`, using the next number. For example, if your last line is `DLL.25`:
    ```
@@ -321,6 +323,8 @@ And let me know if anything conflicts (open an [issue](https://github.com/angelb
 
 Thanks to **The Den** for *PES 6 The Den Patch 2026*, the patch where PES6 HD Text was tested next to 26 other Kitserver modules and with its own font.
 
+Thanks to **SimoneZ**: `HD_original_font` is based on their work (Roboto, Apache 2.0).
+
 ## License
 
 [MIT](LICENSE), with one extra condition: any patch, mod or project that includes or reuses PES6 HD Text, fully or partly, must show this line in its credits: *"Mod PES6 HD Text Original creado por PityCharly."*
@@ -349,7 +353,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **Novedades de la 1.0.1** (lista completa en el [changelog](CHANGELOG.md)):
 
-- **Fuentes HD:** con una fuente HD el texto se dibuja a la resolución de tu pantalla y se ve nítido en 1080p, 1440p y 4K.
+- **Fuentes HD:** con una fuente HD el texto se dibuja a la resolución de tu pantalla en lugar de estirarse desde 640x480 (probado a 1920x1080).
 - **18 fuentes HD incluidas:** `HD_original_font` mantiene el aspecto del PES 6 original, y otras 17 cambian el estilo, desde fuentes limpias hasta pixel, marcador o esténcil.
 - **`pes6_hd_text.exe`, una herramienta de configuración:** activa o apaga el mod, elige la fuente con vista previa, agrega tus propias fuentes y vuelve a la que tenías antes.
 - **Letras más prolijas con las fuentes del juego:** las fuentes finas conservan sus trazos, las letras cortadas se reparan y las redondas salen simétricas.
@@ -357,6 +361,8 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 - **Arreglo:** los escudos, las banderas y los íconos ya no se tocan por error.
 
 **Instalación** (requiere Kitserver 6 con `afs2fs.dll` cargada en `kload.cfg`):
+
+**Si ya tenés la 1.0:** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `pes6_hd_text.exe` y apretá **Apply**.
 
 1. Descargá `PES6_HD_Text_v1.0.1.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
 2. Abrí `kload.cfg` y agregá una línea después de la última `DLL.N`, con el número siguiente, por ejemplo `DLL.26 = "kitserver\pes6_hd_text.dll"`.

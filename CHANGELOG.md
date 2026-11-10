@@ -10,9 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- **HD fonts.** With a high-resolution text font installed, the text is drawn at the resolution of your screen instead of being stretched from 640x480, so it stays crisp at 1080p, 1440p and 4K.
+- **HD fonts.** With a high-resolution text font installed, the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
 - **18 HD fonts** in `Kitserver\GDB\fonts`, all 4x:
-  - `HD_original_font` keeps the look of the original PES 6 font.
+  - `HD_original_font` keeps the look of the original PES 6 font (based on work by SimoneZ).
   - Clean sans: `HD_barlow_condensed`, `HD_dosis`, `HD_fira_sans`, `HD_humanist`, `HD_kanit`, `HD_montserrat`, `HD_oswald`, `HD_rubik`, `HD_semi_condensed`, `HD_titillium`.
   - Techno: `HD_chakra_petch`, `HD_rajdhani`, `HD_futuristic`.
   - Eye-catching: `HD_pixel` (retro arcade), `HD_marker` (hand-written marker), `HD_retro` (rounded retro), `HD_stencil` (military stencil).
@@ -38,7 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Round letters such as "O" come out symmetric.
 - **Text with a drop shadow** is rebuilt letter by letter, so the shadow follows the sharp letters.
 - **Outlined menu text** gets an outline drawn around the sharp letter, with the same thickness as the game's.
-- **With HD fonts the game's letter-pair spacing table is turned off,** so letters no longer stick together (for example in "Eto'o").
+- **With 4x HD fonts (all the included ones) the game's letter-pair spacing table is turned off,** so letters no longer stick together (for example in "Eto'o").
 - **Menus load more smoothly.** Sharp copies are cached: up to 64 MB with the game's own fonts, plus up to 64 MB more with HD fonts.
 - **The DLL now has settings** (`pes6_hd_text.cfg`) instead of none.
 
