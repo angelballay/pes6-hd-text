@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Clean sans: `HD_barlow_condensed`, `HD_dosis`, `HD_fira_sans`, `HD_humanist`, `HD_kanit`, `HD_montserrat`, `HD_oswald`, `HD_rubik`, `HD_semi_condensed`, `HD_titillium`.
   - Techno: `HD_chakra_petch`, `HD_rajdhani`, `HD_futuristic`.
   - Eye-catching: `HD_pixel` (retro arcade), `HD_marker` (hand-written marker), `HD_retro` (rounded retro), `HD_stencil` (military stencil).
-- **`pes6_hd_text.exe`, a settings tool** that goes in the Kitserver folder:
+- **`hdtext.exe`, a settings tool** that goes in the Kitserver folder:
   - Two modes: HD (mod on) and Original (mod off).
   - A font list with a preview drawn with the font's own letters.
   - "Add font..." checks that a file really is a game font before adding it.

@@ -10,7 +10,7 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 - **HD fonts:** with an HD font the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
 - **18 HD fonts included:** `HD_original_font` keeps the original PES 6 look, and 17 more change the style, from clean sans to pixel, marker or stencil.
-- **`pes6_hd_text.exe`, a settings tool:** turn the mod on or off, pick a font with a preview, add your own fonts and go back to the font you had before.
+- **`hdtext.exe`, a settings tool:** turn the mod on or off, pick a font with a preview, add your own fonts and go back to the font you had before.
 - **Cleaner letters with the game's own fonts:** thin fonts keep their strokes, broken letters are repaired and round letters come out symmetric.
 - **More text is sharp:** menu items, help texts, the match clock, and shrunk and italic labels.
 - **Fixed:** club crests, flags and icons are no longer touched by mistake.
@@ -188,7 +188,7 @@ Same zone of the same screen, before and after. The "after" capture is the one r
 - **HD fonts at your screen's resolution:** 18 included, from the original PES 6 look to pixel, marker or stencil styles.
 - **Works with whatever font your patch uses.** PES 6 The Den Patch 2026 ships its own font and gets sharp too.
 - **Any game language.** It works on whatever text the game draws, so it doesn't depend on the language (tested in Spanish).
-- **A settings tool** (`pes6_hd_text.exe`) to turn it on or off and choose the font, with a preview.
+- **A settings tool** (`hdtext.exe`) to turn it on or off and choose the font, with a preview.
 
 ## How it works
 
@@ -208,7 +208,7 @@ The game recreates many of these textures over and over, so the upscaled copies 
 
 Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with Kitserver 6 and with most patches). Don't have it yet? [Kitserver 6](https://www.mediafire.com/file/ljbcnczm893g1b6/kitserver.rar/file)
 
-**Updating from 1.0:** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `pes6_hd_text.exe` and press **Apply**.
+**Updating from 1.0:** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply**.
 
 1. Download `PES6_HD_Text_v1.0.1.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
 2. Open `kload.cfg` with Notepad and add a line after the last `DLL.N`, using the next number. For example, if your last line is `DLL.25`:
@@ -216,12 +216,12 @@ Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with 
    DLL.26 = "kitserver\pes6_hd_text.dll"
    ```
 3. Increase `DLL.num` by 1 (in the example, `DLL.num = 26` becomes `DLL.num = 27`).
-4. Run `Kitserver\pes6_hd_text.exe`, pick a font and press **Apply** (see [Choosing a font](#choosing-a-font)).
+4. Run `Kitserver\hdtext.exe`, pick a font and press **Apply** (see [Choosing a font](#choosing-a-font)).
 5. Start the game.
 
 ## Choosing a font
 
-`pes6_hd_text.exe` is a small settings tool that lives in your Kitserver folder.
+`hdtext.exe` is a small settings tool that lives in your Kitserver folder.
 
 ![The settings tool: mode, font list with preview, installed font and help](images/1.0.1/settings-tool.png)
 
@@ -234,9 +234,9 @@ Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with 
 
 ## Using it with your patch's font
 
-PES6 HD Text works with the font your patch already has. Open `pes6_hd_text.exe` and choose:
+PES6 HD Text works with the font your patch already has. Open `hdtext.exe` and choose:
 
-| You want | In `pes6_hd_text.exe` |
+| You want | In `hdtext.exe` |
 |---|---|
 | **Your patch's font, sharpened 2x** | Leave **HD** and the selected font as they are, and press **Apply**. The font in use is already selected. |
 | **An HD font instead** | **HD**, pick an `HD_…` font, **Apply**. Your patch's font is saved and stays in the list. |
@@ -252,9 +252,9 @@ If your patch ships a font that is already bigger than the original (an HD font)
 
 ## Uninstall
 
-1. Run `pes6_hd_text.exe`, choose **Original (mod off)** and press **Apply**. This puts back the font you had before.
+1. Run `hdtext.exe`, choose **Original (mod off)** and press **Apply**. This puts back the font you had before.
 2. Remove the `pes6_hd_text.dll` line from `kload.cfg` and put `DLL.num` back to its previous value.
-3. Delete `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` and the `HD_*.bin` fonts in `Kitserver\GDB\fonts`. Keep the `backup` folder there: it has your previous fonts.
+3. Delete `pes6_hd_text.dll`, `hdtext.exe`, `pes6_hd_text.cfg` and the `HD_*.bin` fonts in `Kitserver\GDB\fonts`. Keep the `backup` folder there: it has your previous fonts.
 
 Don't leave an HD font installed without the DLL: the game can't load an HD font on its own.
 
@@ -373,24 +373,24 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 - **Fuentes HD:** con una fuente HD el texto se dibuja a la resolución de tu pantalla en lugar de estirarse desde 640x480 (probado a 1920x1080).
 - **18 fuentes HD incluidas:** `HD_original_font` mantiene el aspecto del PES 6 original, y otras 17 cambian el estilo, desde fuentes limpias hasta pixel, marcador o esténcil.
-- **`pes6_hd_text.exe`, una herramienta de configuración:** activa o apaga el mod, elige la fuente con vista previa, agrega tus propias fuentes y vuelve a la que tenías antes.
+- **`hdtext.exe`, una herramienta de configuración:** activa o apaga el mod, elige la fuente con vista previa, agrega tus propias fuentes y vuelve a la que tenías antes.
 - **Letras más prolijas con las fuentes del juego:** las fuentes finas conservan sus trazos, las letras cortadas se reparan y las redondas salen simétricas.
 - **Más texto nítido:** opciones de los menús, textos de ayuda, el reloj del partido y las etiquetas achicadas o en cursiva.
 - **Arreglo:** los escudos, las banderas y los íconos ya no se tocan por error.
 
 **Instalación** (requiere Kitserver 6 con `afs2fs.dll` cargada en `kload.cfg`):
 
-**Si ya tenés la 1.0:** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `pes6_hd_text.exe` y apretá **Apply**.
+**Si ya tenés la 1.0:** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `hdtext.exe` y apretá **Apply**.
 
 1. Descargá `PES6_HD_Text_v1.0.1.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
 2. Abrí `kload.cfg` y agregá una línea después de la última `DLL.N`, con el número siguiente, por ejemplo `DLL.26 = "kitserver\pes6_hd_text.dll"`.
 3. Sumale 1 a `DLL.num`.
-4. Abrí `Kitserver\pes6_hd_text.exe`, elegí una fuente y apretá **Apply**.
+4. Abrí `Kitserver\hdtext.exe`, elegí una fuente y apretá **Apply**.
 5. A jugar.
 
-**Elegir la fuente:** en `pes6_hd_text.exe`, **HD** activa el mod con la fuente que elijas de la lista, y **Original (mod off)** lo apaga y vuelve a poner la fuente que tenías antes. Cada fuente reemplazada queda guardada en `Kitserver\GDB\fonts\backup`.
+**Elegir la fuente:** en `hdtext.exe`, **HD** activa el mod con la fuente que elijas de la lista, y **Original (mod off)** lo apaga y vuelve a poner la fuente que tenías antes. Cada fuente reemplazada queda guardada en `Kitserver\GDB\fonts\backup`.
 
-**Con la fuente de tu parche:** abrí `pes6_hd_text.exe` y elegí:
+**Con la fuente de tu parche:** abrí `hdtext.exe` y elegí:
 
 - **Tu fuente, nítida (x2):** dejá **HD** y la fuente elegida como están y apretá **Apply** (la que usás ya aparece seleccionada).
 - **Una fuente HD:** **HD**, elegí una `HD_…` y **Apply**. La de tu parche queda guardada en la lista.
@@ -399,7 +399,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dentro de los archivos del juego (como The Den Patch 2026), o **"Font before PES6 HD Text"** si la instaló con Kitserver.
 
-**Desinstalar:** en `pes6_hd_text.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
+**Desinstalar:** en `hdtext.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `hdtext.exe`, `pes6_hd_text.cfg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
 
 **¿Hacés fuentes o mods?** Las fuentes HD son bienvenidas: el formato está en [For font makers](#for-font-makers). Si tu mod engancha alguna función del juego, fijate la lista en [For mod makers](#for-mod-makers-hooked-functions) y coordinemos para no pisarnos.
 
