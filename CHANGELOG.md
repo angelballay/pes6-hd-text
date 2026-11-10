@@ -25,7 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Backups.** Every font the tool replaces is kept in `Kitserver\GDB\fonts\backup`, one folder per date and time.
 - **Going back to your previous font.** The font you had before PES6 HD Text (for example your patch's font) is saved the first time it is replaced, and it shows in the list as "Font before PES6 HD Text". Original mode puts it back.
 - **`pes6_hd_text.cfg` settings file** with `mode = hd` or `mode = original`. The tool writes it; the DLL reads it when the game starts.
-- **Support for HD fonts made by modders** at any scale (2x, 3x, 4x or in between) and with grey, coloured or black-outlined palettes, for the text font and for the other game fonts.
+- **Support for HD fonts made by modders** at 2x, 3x or 4x (the DLL also accepts other scales) and with grey, coloured or black-outlined palettes, for the text font and for the other game fonts.
 
 ### Changed
 

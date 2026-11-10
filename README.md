@@ -254,7 +254,7 @@ If your patch ships a font that is already bigger than the original (an HD font)
 
 1. Run `pes6_hd_text.exe`, choose **Original (mod off)** and press **Apply**. This puts back the font you had before.
 2. Remove the `pes6_hd_text.dll` line from `kload.cfg` and put `DLL.num` back to its previous value.
-3. Delete `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` and the `Kitserver\GDB\fonts` folder.
+3. Delete `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` and the `HD_*.bin` fonts in `Kitserver\GDB\fonts`. Keep the `backup` folder there: it has your previous fonts.
 
 Don't leave an HD font installed without the DLL: the game can't load an HD font on its own.
 
@@ -399,7 +399,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dentro de los archivos del juego (como The Den Patch 2026), o **"Font before PES6 HD Text"** si la instaló con Kitserver.
 
-**Desinstalar:** en `pes6_hd_text.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` y la carpeta `Kitserver\GDB\fonts`. No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
+**Desinstalar:** en `pes6_hd_text.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
 
 **¿Hacés fuentes o mods?** Las fuentes HD son bienvenidas: el formato está en [For font makers](#for-font-makers). Si tu mod engancha alguna función del juego, fijate la lista en [For mod makers](#for-mod-makers-hooked-functions) y coordinemos para no pisarnos.
 
