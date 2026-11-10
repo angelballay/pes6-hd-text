@@ -4,7 +4,7 @@
 
 A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.
 
-**[⬇ Download PES6 HD Text 1.0.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-101) · [Install](#install) · [Choosing a font](#choosing-a-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
+**[⬇ Download PES6 HD Text 1.0.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-101) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
 ## What's new in 1.0.1
 
@@ -232,6 +232,24 @@ Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with 
 - Fonts live in `Kitserver\GDB\fonts`, and the installed one is copied to `Kitserver\dat\0_text.afs`. Every replaced font is kept in `Kitserver\GDB\fonts\backup`, and the one you had before PES6 HD Text stays in the list as "Font before PES6 HD Text".
 - Windows asks for permission when you open it, because it writes in the game folder (often inside Program Files).
 
+## Using it with your patch's font
+
+PES6 HD Text works with the font your patch already has. Open `pes6_hd_text.exe` and choose:
+
+| You want | In `pes6_hd_text.exe` |
+|---|---|
+| **Your patch's font, sharpened 2x** | Leave **HD** and the selected font as they are, and press **Apply**. The font in use is already selected. |
+| **An HD font instead** | **HD**, pick an `HD_…` font, **Apply**. Your patch's font is saved and stays in the list. |
+| **Back to your patch's font, still sharp** | **HD**, select it again, **Apply**. |
+| **Back to your patch's font, without the mod** | **Original (mod off)**, **Apply**. The font comes back exactly as the patch had it, and the mod stops doing anything. |
+
+Where your patch's font shows up in the list:
+
+- **"Game font"** if the patch keeps it inside the game's own files (`dat\0_text.afs`), as PES 6 The Den Patch 2026 does. "Installed" then says *game font (The Den Patch 2026)*.
+- **"Font before PES6 HD Text"** if the patch installed it with Kitserver (`Kitserver\dat\0_text.afs\unknow_00053.bin` or `unnamed_53*.bin`). The first time you open the tool, it is copied to `Kitserver\GDB\fonts\backup\before_pes6_hd_text`.
+
+If your patch ships a font that is already bigger than the original (an HD font), the mod detects it and uses it as HD by itself.
+
 ## Uninstall
 
 1. Run `pes6_hd_text.exe`, choose **Original (mod off)** and press **Apply**. This puts back the font you had before.
@@ -371,6 +389,15 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 5. A jugar.
 
 **Elegir la fuente:** en `pes6_hd_text.exe`, **HD** activa el mod con la fuente que elijas de la lista, y **Original (mod off)** lo apaga y vuelve a poner la fuente que tenías antes. Cada fuente reemplazada queda guardada en `Kitserver\GDB\fonts\backup`.
+
+**Con la fuente de tu parche:** abrí `pes6_hd_text.exe` y elegí:
+
+- **Tu fuente, nítida (x2):** dejá **HD** y la fuente elegida como están y apretá **Apply** (la que usás ya aparece seleccionada).
+- **Una fuente HD:** **HD**, elegí una `HD_…` y **Apply**. La de tu parche queda guardada en la lista.
+- **Volver a tu fuente, nítida:** **HD**, volvé a elegirla y **Apply**.
+- **Volver a tu fuente, sin el mod:** **Original (mod off)** y **Apply**. Vuelve tal como la tenía el parche y el mod deja de hacer cosas.
+
+En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dentro de los archivos del juego (como The Den Patch 2026), o **"Font before PES6 HD Text"** si la instaló con Kitserver.
 
 **Desinstalar:** en `pes6_hd_text.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `pes6_hd_text.exe`, `pes6_hd_text.cfg` y la carpeta `Kitserver\GDB\fonts`. No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
 
