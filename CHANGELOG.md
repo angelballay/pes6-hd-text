@@ -45,6 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - **Club crests, flags, team-name badges, shirts and button icons are no longer processed by mistake.** In some patches 1.0 gave crests a dark, ragged border. Now only the game's text is touched.
+- **Works with the HD crests module (`flags6.dll`).** With 1.0, flags6 replaced no crests at all: 1.0 handed the crests to the game at twice their size (128x128), and flags6 only replaces crests that arrive at their original size (64x64). 1.0.1 leaves crests untouched, so the HD crests show again. Tested with flags6 v4, with the game's font and with an HD font ([#1](https://github.com/angelballay/pes6-hd-text/issues/1)).
 
 ## [1.0] - 2026-11-07
 
