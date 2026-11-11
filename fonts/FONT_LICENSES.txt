@@ -1,0 +1,47 @@
+PES6 HD Text 1.0.1 - fonts
+==========================
+
+Each .bin file is the game's text font (font 53) redrawn at 4x from a free font.
+Letters the free font does not have (Japanese, symbols) are the game's own letters, upscaled.
+The license of each source font is in the "licenses" folder.
+
+File                     Based on                  License
+------------------------ ------------------------- ----------------------------------------
+HD_original_font.bin     Roboto, by SimoneZ        Apache 2.0  (LICENSE_Apache-2.0.txt)
+HD_barlow_condensed.bin  Barlow Condensed          SIL OFL 1.1 (OFL_barlowcondensed.txt)
+HD_chakra_petch.bin      Chakra Petch              SIL OFL 1.1 (OFL_chakrapetch.txt)
+HD_dosis.bin             Dosis                     SIL OFL 1.1 (OFL_dosis.txt)
+HD_dynapuff.bin          DynaPuff                  SIL OFL 1.1 (OFL_dynapuff.txt)
+HD_fira_sans.bin         Fira Sans                 SIL OFL 1.1 (OFL_firasans.txt)
+HD_futuristic.bin        Audiowide (*)             SIL OFL 1.1 (OFL_audiowide.txt)
+HD_hachimaru.bin         Hachi Maru Pop            SIL OFL 1.1 (OFL_hachimarupop.txt)
+HD_humanist.bin          Lato (*)                  SIL OFL 1.1 (OFL_lato.txt)
+HD_kablammo.bin          Kablammo                  SIL OFL 1.1 (OFL_kablammo.txt)
+HD_kanit.bin             Kanit                     SIL OFL 1.1 (OFL_kanit.txt)
+HD_luckiest.bin          Luckiest Guy              Apache 2.0  (LICENSE_Apache-2.0.txt)
+HD_marhey.bin            Marhey                    SIL OFL 1.1 (OFL_marhey.txt)
+HD_marker.bin            Permanent Marker          Apache 2.0  (LICENSE_Apache-2.0.txt)
+HD_montserrat.bin        Montserrat                SIL OFL 1.1 (OFL_montserrat.txt)
+HD_nabla.bin             Nabla                     SIL OFL 1.1 (OFL_nabla.txt)
+HD_neon_lines.bin        Monoton (*)               SIL OFL 1.1 (OFL_monoton.txt)
+HD_oswald.bin            Oswald                    SIL OFL 1.1 (OFL_oswald.txt)
+HD_pixel.bin             Press Start 2P (*)        SIL OFL 1.1 (OFL_pressstart2p.txt)
+HD_poster_deco.bin       Plaster (*)               SIL OFL 1.1 (OFL_plaster.txt)
+HD_rajdhani.bin          Rajdhani                  SIL OFL 1.1 (OFL_rajdhani.txt)
+HD_retro.bin             Righteous (*)             SIL OFL 1.1 (OFL_righteous.txt)
+HD_rubik.bin             Rubik                     SIL OFL 1.1 (OFL_rubik.txt)
+HD_semi_condensed.bin    Saira Semi Condensed (*)  SIL OFL 1.1 (OFL_sairasemicondensed.txt)
+HD_shrikhand.bin         Shrikhand                 SIL OFL 1.1 (OFL_shrikhand.txt)
+HD_snowflake.bin         Snowburst One (*)         SIL OFL 1.1 (OFL_snowburstone.txt)
+HD_speed.bin             Faster One (*)            SIL OFL 1.1 (OFL_fasterone.txt)
+HD_squared.bin           Quantico (*)              SIL OFL 1.1 (OFL_quantico.txt)
+HD_stencil.bin           Black Ops One             SIL OFL 1.1 (OFL_blackopsone.txt)
+HD_storybook.bin         Henny Penny (*)           SIL OFL 1.1 (OFL_hennypenny.txt)
+HD_teko.bin              Teko                      SIL OFL 1.1 (OFL_teko.txt)
+HD_titillium.bin         Titillium Web             SIL OFL 1.1 (OFL_titilliumweb.txt)
+HD_tokyo_zoo.bin         Zen Tokyo Zoo             SIL OFL 1.1 (OFL_zentokyozoo.txt)
+HD_train.bin             Train One                 SIL OFL 1.1 (OFL_trainone.txt)
+HD_wide.bin              Revalia (*)               SIL OFL 1.1 (OFL_revalia.txt)
+
+(*) The original name is a Reserved Font Name, so the modified version has a different name.
+These files are modified versions (redrawn for PES6) and are not the original fonts.
