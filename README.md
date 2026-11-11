@@ -1,6 +1,6 @@
 # PES6 HD Text
 
-**The first PES 6 mod that makes the game's text sharp in HD: same fonts, same layout, and it works with any patch.**
+**PES 6's in-game text, sharp in HD: same fonts, same layout, and it works with any patch.**
 
 A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.
 
@@ -71,6 +71,33 @@ Every image compares the same screen. "No mod" is the game without the mod; only
 **Kit selection, two HD fonts** (no capture without the mod of this screen)
 
 ![Kit selection with HD_original_font and HD_montserrat](images/1.0.1/fonts-kit-select.png)
+
+</details>
+
+<details>
+<summary><b>1.0 vs 1.0.1</b> (the same font at 2x, cleaner letters in 1.0.1)</summary>
+
+With the game's own fonts, 1.0.1 keeps faint strokes, repairs broken letters and makes round letters symmetric. Both sides use the same font, sharpened 2x.
+
+**The Den Patch 2026, pause menu**
+
+![The Den Patch 2026, pause menu: 1.0 vs 1.0.1](images/1.0.1/upgrade/den-pause-menu.png)
+
+**The Den Patch 2026, match settings**
+
+![The Den Patch 2026, match settings: 1.0 vs 1.0.1](images/1.0.1/upgrade/den-match-settings.png)
+
+**The Den Patch 2026, edit menu**
+
+![The Den Patch 2026, edit menu: 1.0 vs 1.0.1](images/1.0.1/upgrade/den-edit-menu.png)
+
+**Original PES 6, line-up**
+
+![Original PES 6, line-up: 1.0 vs 1.0.1](images/1.0.1/upgrade/original-lineup.png)
+
+**Original PES 6, edit menu**
+
+![Original PES 6, edit menu: 1.0 vs 1.0.1](images/1.0.1/upgrade/original-edit-menu.png)
 
 </details>
 
@@ -232,6 +259,10 @@ Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with 
 - Fonts live in `Kitserver\GDB\fonts`, and the installed one is copied to `Kitserver\dat\0_text.afs`. Every replaced font is kept in `Kitserver\GDB\fonts\backup`, and the one you had before PES6 HD Text stays in the list as "Font before PES6 HD Text".
 - Windows asks for permission when you open it, because it writes in the game folder (often inside Program Files).
 
+**The 35 HD fonts**, as the tool previews them (also in the [fonts](fonts) folder of this repo, with their licenses):
+
+![The 35 HD fonts, as the settings tool previews them](images/1.0.1/fonts-all-35.png)
+
 ## Using it with your patch's font
 
 PES6 HD Text works with the font your patch already has. Open `hdtext.exe` and choose:
@@ -347,7 +378,7 @@ Thanks to **SimoneZ**: `HD_original_font` is based on their work (Roboto, Apache
 
 [MIT](LICENSE), with one extra condition: any patch, mod or project that includes or reuses PES6 HD Text, fully or partly, must show this line in its credits: *"Mod PES6 HD Text Original creado por PityCharly."*
 
-The included HD fonts are modified versions of free fonts (SIL Open Font License and Apache 2.0). The download lists each one with its source font and license in `Kitserver\GDB\fonts\FONT_LICENSES.txt`.
+The included HD fonts are modified versions of free fonts (SIL Open Font License and Apache 2.0). The download lists each one with its source font and license in `Kitserver\GDB\fonts\FONT_LICENSES.txt` (also in [fonts/FONT_LICENSES.txt](fonts/FONT_LICENSES.txt) in this repo).
 
 ## Feedback
 
@@ -365,7 +396,7 @@ My other mod:
 
 ## Español
 
-**El primer mod de PES 6 que pone el texto del juego nítido en HD: mismas fuentes, mismo diseño, y anda con cualquier parche.**
+**El texto de PES 6, nítido en HD: mismas fuentes, mismo diseño, y anda con cualquier parche.**
 
 Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos en lugar de borrosos y estirados. El juego sigue usando sus posiciones: nada se mueve ni se corta. Podés quedarte con la fuente de tu juego, ahora nítida, o elegir una fuente HD.
 
@@ -388,7 +419,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 4. Abrí `Kitserver\hdtext.exe`, elegí una fuente y apretá **Apply**.
 5. A jugar.
 
-**Elegir la fuente:** en `hdtext.exe`, **HD** activa el mod con la fuente que elijas de la lista, y **Original (mod off)** lo apaga y vuelve a poner la fuente que tenías antes. Cada fuente reemplazada queda guardada en `Kitserver\GDB\fonts\backup`.
+**Elegir la fuente:** en `hdtext.exe`, **HD** activa el mod con la fuente que elijas de la lista, y **Original (mod off)** lo apaga y vuelve a poner la fuente que tenías antes. Cada fuente reemplazada queda guardada en `Kitserver\GDB\fonts\backup`. Las 35 fuentes HD también están en la carpeta [fonts](fonts) de este repo, con sus licencias.
 
 **Con la fuente de tu parche:** abrí `hdtext.exe` y elegí:
 
