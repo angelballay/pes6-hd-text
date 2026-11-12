@@ -30,7 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Changed
 
 - **More of the text is sharp:**
-  - menu items, help texts and the match clock, which the game draws from its letter sheets;
+  - menu items and help texts, which the game draws from its letter sheets;
   - shrunk and italic labels.
 - **Cleaner letters with the game's own 16 px fonts:**
   - Thin and narrow fonts (for example the one in PES 6 The Den Patch 2026) keep their faint strokes.
