@@ -2,11 +2,16 @@
 
 **PES 6's in-game text, sharp in HD: same fonts, same layout, and it works with any patch.**
 
-A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.
+A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.1.
 
-**[⬇ Download PES6 HD Text 1.0.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-101) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
+**[⬇ Download PES6 HD Text 1.0.1.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-1011) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
 **▶ [Video (4 min): before vs after, install, the font picker and all 35 fonts](https://www.youtube.com/watch?v=AISb6npriI4)**
+
+## What's new in 1.0.1.1
+
+- **Works with PesAssetLoader** (the Plugin Loader and Asset Loader by Dmitri-F). With 1.0.1, PES6 HD Text turned itself off when the Asset Loader was installed, and with an HD font the text came out huge. Now both mods work together.
+- Only `pes6_hd_text.dll` changes: to update from 1.0.1, copy it over the old one.
 
 ## What's new in 1.0.1
 
@@ -237,9 +242,11 @@ The game recreates many of these textures over and over, so the upscaled copies 
 
 Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with Kitserver 6 and with most patches). Don't have it yet? [Kitserver 6](https://www.mediafire.com/file/ljbcnczm893g1b6/kitserver.rar/file)
 
+**Updating from 1.0.1:** copy the new `pes6_hd_text.dll` over the old one. That's all.
+
 **Updating from 1.0:** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply**.
 
-1. Download `PES6_HD_Text_v1.0.1.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
+1. Download `PES6_HD_Text_v1.0.1.1.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
 2. Open `kload.cfg` with Notepad and add a line after the last `DLL.N`, using the next number. For example, if your last line is `DLL.25`:
    ```
    DLL.26 = "kitserver\pes6_hd_text.dll"
@@ -343,6 +350,8 @@ Groups:
 - **Letter sheets:** hooked together. Without them the sharp sheet is still built, a bit later, and the selected menu option may flicker.
 - **Shadow text:** on its own. If it can't be hooked, only the letter-by-letter rebuild of shadow text is turned off.
 
+**If another mod already hooked one of these functions** (since 1.0.1.1): when a spot starts with a plain 5-byte jump (`E9`) into another module and the rest of the original bytes are intact, PES6 HD Text chains to it instead of turning off. Our code runs first, then the other mod's, then the game's. Any other change at a spot is left alone, as before. If your mod is loaded after ours and finds our jump there, please chain to it the same way instead of refusing to hook.
+
 It also calls Direct3D 8 `CreateTexture` on the game's device (no hook there). [Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod) hooks `0x005A5905`, `0x005A637B`, `0x005ADEC9`, `0x005AF6D6`, `0x005AFB43` and `0x0047810D`: no overlap, and both run together in The Den Patch 2026.
 
 ## Compatibility
@@ -350,6 +359,7 @@ It also calls Direct3D 8 `CreateTexture` on the game's device (no hook there). [
 - Tested on the **original PES 6** + Kitserver 6.
 - Tested on **PES 6 The Den Patch 2026**, together with its 26 other Kitserver modules, including [Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod).
 - Works together with PES6 Flags Module (`flags6.dll`, HD crests; tested with v4).
+- Works together with **PesAssetLoader**, the Plugin Loader and Asset Loader by Dmitri-F (since 1.0.1.1; tested with an HD font and with HD crests loaded by the Asset Loader).
 - Before changing anything, the module checks the game code where it hooks. If your `pes6.exe` is different, it does nothing and the game runs as usual.
 - In "Original" mode the DLL hooks nothing: the game is exactly as without the mod.
 - Sharp copies use at most 64 MB of memory with the game's own fonts, plus up to 64 MB more with HD fonts.
@@ -419,6 +429,8 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **▶ [Video (4 min, narración en inglés con subtítulos en español): antes y después, instalación, el selector y las 35 fuentes](https://www.youtube.com/watch?v=AISb6npriI4)**
 
+**1.0.1.1:** anda junto con PesAssetLoader (el Plugin Loader y Asset Loader de Dmitri-F). Con la 1.0.1, PES6 HD Text se apagaba si estaba instalado y, con una fuente HD, el texto salía gigante. Solo cambia `pes6_hd_text.dll`: si tenés la 1.0.1, copiala encima de la anterior.
+
 **Novedades de la 1.0.1** (lista completa en el [changelog](CHANGELOG.md)):
 
 - **Fuentes HD:** con una fuente HD el texto se dibuja a la resolución de tu pantalla en lugar de estirarse desde 640x480 (probado a 1920x1080).
@@ -432,7 +444,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **Si ya tenés la 1.0:** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `hdtext.exe` y apretá **Apply**.
 
-1. Descargá `PES6_HD_Text_v1.0.1.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
+1. Descargá `PES6_HD_Text_v1.0.1.1.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
 2. Abrí `kload.cfg` y agregá una línea después de la última `DLL.N`, con el número siguiente, por ejemplo `DLL.26 = "kitserver\pes6_hd_text.dll"`.
 3. Sumale 1 a `DLL.num`.
 4. Abrí `Kitserver\hdtext.exe`, elegí una fuente y apretá **Apply**.
@@ -453,7 +465,7 @@ En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dent
 
 **¿Hacés fuentes o mods?** Las fuentes HD son bienvenidas: el formato está en [For font makers](#for-font-makers). Si tu mod engancha alguna función del juego, fijate la lista en [For mod makers](#for-mod-makers-hooked-functions) y coordinemos para no pisarnos.
 
-**Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026, en español; como trabaja sobre el texto que dibuja el juego, no depende del idioma. Gracias a **The Den** por *PES 6 The Den Patch 2026*. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha. Las versiones china y japonesa del juego todavía no están soportadas: para sumarlas necesito el juego en ese idioma (un zip o su carpeta `dat`); si lo tenés, abrí un [issue](https://github.com/angelballay/pes6-hd-text/issues).
+**Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026, en español, y junto con el PES6 Flags Module y con PesAssetLoader; como trabaja sobre el texto que dibuja el juego, no depende del idioma. Gracias a **The Den** por *PES 6 The Den Patch 2026*. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha. Las versiones china y japonesa del juego todavía no están soportadas: para sumarlas necesito el juego en ese idioma (un zip o su carpeta `dat`); si lo tenés, abrí un [issue](https://github.com/angelballay/pes6-hd-text/issues).
 
 **Licencia:** [MIT](LICENSE) con una condición de atribución. Si lo incluís en un parche, poné en los créditos: *"Mod PES6 HD Text Original creado por PityCharly."* Las fuentes HD incluidas son versiones modificadas de fuentes libres (SIL Open Font License y Apache 2.0); el detalle está en `Kitserver\GDB\fonts\FONT_LICENSES.txt` dentro de la descarga.
 

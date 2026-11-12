@@ -4,6 +4,18 @@ All notable changes to PES6 HD Text are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.1.1] - 2026-11-12
+
+To update from 1.0.1, just replace `pes6_hd_text.dll`.
+
+### Fixed
+
+- **Works with PesAssetLoader** (Dmitri-F's Plugin Loader + Asset Loader). With 1.0.1, PES6 HD Text turned itself off when the Asset Loader was installed (with an HD font, the text came out huge). Now both mods work together.
+
+### Changed
+
+- **Hooks chain to other mods.** If another mod already hooked one of the same game functions with a plain jump, PES6 HD Text now hooks on top of it instead of turning off.
+
 ## [1.0.1] - 2026-11-11
 
 ### Added
@@ -55,5 +67,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The game's text is handed to the video card at twice the resolution, with the same fonts and positions.
 - Works with the font of any patch (tested with PES 6 The Den Patch 2026).
 
+[1.0.1.1]: https://github.com/angelballay/pes6-hd-text/compare/v1.0.1...v1.0.1.1
 [1.0.1]: https://github.com/angelballay/pes6-hd-text/compare/v1.0...v1.0.1
 [1.0]: https://github.com/angelballay/pes6-hd-text/releases/tag/v1.0
