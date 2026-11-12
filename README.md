@@ -6,14 +6,16 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 **[⬇ Download PES6 HD Text 1.0.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-101) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
+**▶ [Video (4 min): before vs after, install, the font picker and all 35 fonts](https://www.youtube.com/watch?v=AISb6npriI4)**
+
 ## What's new in 1.0.1
 
 - **HD fonts:** with an HD font the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
 - **35 HD fonts included:** `HD_original_font` keeps the original PES 6 look, and 34 more change the style, from clean sans to pixel, marker, stencil, comic or neon.
 - **`hdtext.exe`, a settings tool:** turn the mod on or off, pick a font with a preview, add your own fonts and go back to the font you had before.
 - **Cleaner letters with the game's own fonts:** thin fonts keep their strokes, broken letters are repaired and round letters come out symmetric.
-- **More text is sharp:** menu items, help texts, the match clock, and shrunk and italic labels.
-- **Fixed:** club crests, flags and icons are no longer touched by mistake.
+- **More text is sharp:** menu items, help texts, and shrunk and italic labels.
+- **Fixed:** club crests, flags and icons are no longer touched by mistake, and PES6 Flags Module (`flags6.dll`, HD crests) now works alongside it ([#1](https://github.com/angelballay/pes6-hd-text/issues/1)).
 
 Full list in the [changelog](CHANGELOG.md).
 
@@ -316,23 +318,30 @@ If you make fonts for PES 6, HD versions are very welcome:
 
 ## For mod makers: hooked functions
 
-Each hook is a 5-byte jump at the start of a function of `pes6.exe` (PC). Before writing, the mod checks that the original bytes are there; if another mod already changed one of these spots, it skips that part (or does nothing at all) and the game keeps running. If your mod hooks any of these, let's coordinate in an [issue](https://github.com/angelballay/pes6-hd-text/issues).
+Each hook is a 5-byte jump at the start of a function of `pes6.exe` (PC); if the instructions it overwrites are longer, the rest is filled with NOPs (**Bytes**). Every hook calls the original function and none of them replaces it: **Runs** says whether the mod's code runs before the original, after it, or both. Before writing, the mod checks that the original bytes are there; if another mod already changed one of these spots, it skips that part (or does nothing at all) and the game keeps running. In "Original" mode nothing is hooked. If your mod hooks any of these, let's coordinate in an [issue](https://github.com/angelballay/pes6-hd-text/issues).
 
-| Address | What the game does there | Why PES6 HD Text hooks it |
-|---|---|---|
-| `0x0087A810` | TexAdd: every image enters the texture system | marks which images are text |
-| `0x0040C270` | builds a Direct3D texture from a game image | hands over the sharp copy |
-| `0x00953350` | creates a text object | marks the text image |
-| `0x00953080` | composes the image of a text, letter by letter | rebuilds shadow text with sharp letters |
-| `0x00953660` | registers an image | follows text images |
-| `0x00958FA0` | rescales a text (menu labels) | sharp shrunk labels |
-| `0x00958EA0` | slants a text (italic labels) | sharp italic labels |
-| `0x0095A1E0` | adds a letter to a letter sheet (menus, help, clock) | sharp letter sheets |
-| `0x00959780` | draws a letter into a letter sheet | keeps the sharp sheet in step |
-| `0x008D18C0` | copies pixels into an image | keeps the sharp sheet in step |
-| `0x0094D920` | a font finished loading | HD font detection |
-| `0x0094DD20` | a font is freed | gives the game back its own font data |
-| `0x00959520` | prepares a font's letter-pair spacing | turned off for 4x fonts |
+| Address | Group | Bytes | Runs | What the game does there | Why PES6 HD Text hooks it |
+|---|---|---|---|---|---|
+| `0x0087A810` | Required | 7 | before | TexAdd: every image enters the texture system | marks which images are text |
+| `0x0040C270` | Required | 7 | before and after | builds a Direct3D texture from a game image | hands over the sharp copy |
+| `0x00953350` | Required | 5 | after | creates a text object | marks the text image |
+| `0x00953660` | Required | 5 | before | registers an image | follows text images |
+| `0x00958FA0` | Required | 6 | before and after | rescales a text (menu labels) | sharp shrunk labels |
+| `0x00958EA0` | Required | 6 | before and after | slants a text (italic labels) | sharp italic labels |
+| `0x0095A1E0` | Required | 7 | after | adds a letter to a letter sheet (menus, help, outlined titles) | sharp letter sheets |
+| `0x0094D920` | HD fonts | 6 | after | a font finished loading | HD font detection |
+| `0x0094DD20` | HD fonts | 5 | before | a font is freed | gives the game back its own font data |
+| `0x00959520` | HD fonts | 10 | after | prepares a font's letter-pair spacing | turned off for 4x fonts |
+| `0x00959780` | Letter sheets | 8 | before (only notes its arguments) | draws a letter into a letter sheet | keeps the sharp sheet in step |
+| `0x008D18C0` | Letter sheets | 8 | before | copies pixels into an image | keeps the sharp sheet in step |
+| `0x00953080` | Shadow text | 10 | after | composes the image of a text, letter by letter | rebuilds shadow text with sharp letters |
+
+Groups:
+
+- **Required:** if any of these has different bytes, the mod installs nothing.
+- **HD fonts:** hooked together. Without them there are no HD fonts, but the game's font is still sharpened.
+- **Letter sheets:** hooked together. Without them the sharp sheet is still built, a bit later, and the selected menu option may flicker.
+- **Shadow text:** on its own. If it can't be hooked, only the letter-by-letter rebuild of shadow text is turned off.
 
 It also calls Direct3D 8 `CreateTexture` on the game's device (no hook there). [Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod) hooks `0x005A5905`, `0x005A637B`, `0x005ADEC9`, `0x005AF6D6`, `0x005AFB43` and `0x0047810D`: no overlap, and both run together in The Den Patch 2026.
 
@@ -340,15 +349,23 @@ It also calls Direct3D 8 `CreateTexture` on the game's device (no hook there). [
 
 - Tested on the **original PES 6** + Kitserver 6.
 - Tested on **PES 6 The Den Patch 2026**, together with its 26 other Kitserver modules, including [Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod).
+- Works together with PES6 Flags Module (`flags6.dll`, HD crests; tested with v4).
 - Before changing anything, the module checks the game code where it hooks. If your `pes6.exe` is different, it does nothing and the game runs as usual.
 - In "Original" mode the DLL hooks nothing: the game is exactly as without the mod.
 - Sharp copies use at most 64 MB of memory with the game's own fonts, plus up to 64 MB more with HD fonts.
+
+**With PES6 Flags Module** (original PES 6, flags6 v4 and the HD_wide font): the HD crests and the team acronyms (FCB, RMA) come from flags6, the text from PES6 HD Text.
+
+![Team selection: HD crests from PES6 Flags Module and HD text from PES6 HD Text](images/1.0.1/flags6-team-select.png)
+
+![Match menu: team acronyms from PES6 Flags Module and HD text from PES6 HD Text](images/1.0.1/flags6-match-menu.png)
 
 ## Known limitations
 
 - **Text only.** Graphics that are images stay as they are: the title screen ("Press any button"), logos, icons, menu widgets and the scoreboard numbers (they are part of a texture).
 - **Big outlined titles keep the game's original outline,** so letters that overlap slightly in the original still overlap (now sharp).
 - **Not a widescreen fix:** the menu layer is still 4:3, stretched to your screen.
+- **Chinese and Japanese versions** of the game aren't supported yet. To add them I need the game in that language (a zip of the game or its `dat` folder) to see how its text works. If you have one, please open an [issue](https://github.com/angelballay/pes6-hd-text/issues).
 
 Since it only touches text, it should sit nicely next to texture packs and other HD projects.
 
@@ -400,14 +417,16 @@ My other mod:
 
 Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos en lugar de borrosos y estirados. El juego sigue usando sus posiciones: nada se mueve ni se corta. Podés quedarte con la fuente de tu juego, ahora nítida, o elegir una fuente HD.
 
+**▶ [Video (4 min, narración en inglés con subtítulos en español): antes y después, instalación, el selector y las 35 fuentes](https://www.youtube.com/watch?v=AISb6npriI4)**
+
 **Novedades de la 1.0.1** (lista completa en el [changelog](CHANGELOG.md)):
 
 - **Fuentes HD:** con una fuente HD el texto se dibuja a la resolución de tu pantalla en lugar de estirarse desde 640x480 (probado a 1920x1080).
 - **35 fuentes HD incluidas:** `HD_original_font` mantiene el aspecto del PES 6 original, y otras 34 cambian el estilo, desde fuentes limpias hasta pixel, marcador, esténcil, cómic o neón.
 - **`hdtext.exe`, una herramienta de configuración:** activa o apaga el mod, elige la fuente con vista previa, agrega tus propias fuentes y vuelve a la que tenías antes.
 - **Letras más prolijas con las fuentes del juego:** las fuentes finas conservan sus trazos, las letras cortadas se reparan y las redondas salen simétricas.
-- **Más texto nítido:** opciones de los menús, textos de ayuda, el reloj del partido y las etiquetas achicadas o en cursiva.
-- **Arreglo:** los escudos, las banderas y los íconos ya no se tocan por error.
+- **Más texto nítido:** opciones de los menús, textos de ayuda y las etiquetas achicadas o en cursiva.
+- **Arreglo:** los escudos, las banderas y los íconos ya no se tocan por error, y el PES6 Flags Module (`flags6.dll`, escudos HD) ya anda junto con el mod.
 
 **Instalación** (requiere Kitserver 6 con `afs2fs.dll` cargada en `kload.cfg`):
 
@@ -434,7 +453,7 @@ En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dent
 
 **¿Hacés fuentes o mods?** Las fuentes HD son bienvenidas: el formato está en [For font makers](#for-font-makers). Si tu mod engancha alguna función del juego, fijate la lista en [For mod makers](#for-mod-makers-hooked-functions) y coordinemos para no pisarnos.
 
-**Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026, en español; como trabaja sobre el texto que dibuja el juego, no depende del idioma. Gracias a **The Den** por *PES 6 The Den Patch 2026*. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha.
+**Probado** en PES 6 original + Kitserver 6 y en PES 6 The Den Patch 2026, en español; como trabaja sobre el texto que dibuja el juego, no depende del idioma. Gracias a **The Den** por *PES 6 The Den Patch 2026*. **Limitaciones:** solo cambia el texto (la pantalla de título, los logos, los íconos y los números del marcador son imágenes y quedan igual), el contorno de los títulos grandes es el original y no es un parche de pantalla ancha. Las versiones china y japonesa del juego todavía no están soportadas: para sumarlas necesito el juego en ese idioma (un zip o su carpeta `dat`); si lo tenés, abrí un [issue](https://github.com/angelballay/pes6-hd-text/issues).
 
 **Licencia:** [MIT](LICENSE) con una condición de atribución. Si lo incluís en un parche, poné en los créditos: *"Mod PES6 HD Text Original creado por PityCharly."* Las fuentes HD incluidas son versiones modificadas de fuentes libres (SIL Open Font License y Apache 2.0); el detalle está en `Kitserver\GDB\fonts\FONT_LICENSES.txt` dentro de la descarga.
 
