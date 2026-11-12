@@ -6,6 +6,8 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 **[⬇ Download PES6 HD Text 1.0.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-101) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
+**▶ [Video (4 min): before vs after, install, the font picker and all 35 fonts](https://www.youtube.com/watch?v=AISb6npriI4)**
+
 ## What's new in 1.0.1
 
 - **HD fonts:** with an HD font the text is drawn at the resolution of your screen instead of being stretched from 640x480 (tested at 1920x1080).
@@ -13,7 +15,7 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 - **`hdtext.exe`, a settings tool:** turn the mod on or off, pick a font with a preview, add your own fonts and go back to the font you had before.
 - **Cleaner letters with the game's own fonts:** thin fonts keep their strokes, broken letters are repaired and round letters come out symmetric.
 - **More text is sharp:** menu items, help texts, the match clock, and shrunk and italic labels.
-- **Fixed:** club crests, flags and icons are no longer touched by mistake.
+- **Fixed:** club crests, flags and icons are no longer touched by mistake, and the HD crests module (`flags6.dll`) now works alongside it ([#1](https://github.com/angelballay/pes6-hd-text/issues/1)).
 
 Full list in the [changelog](CHANGELOG.md).
 
@@ -340,6 +342,7 @@ It also calls Direct3D 8 `CreateTexture` on the game's device (no hook there). [
 
 - Tested on the **original PES 6** + Kitserver 6.
 - Tested on **PES 6 The Den Patch 2026**, together with its 26 other Kitserver modules, including [Change Physics Game](https://github.com/angelballay/pes6_game_physics_mod).
+- Works together with the HD crests module (`flags6.dll`, tested with v4).
 - Before changing anything, the module checks the game code where it hooks. If your `pes6.exe` is different, it does nothing and the game runs as usual.
 - In "Original" mode the DLL hooks nothing: the game is exactly as without the mod.
 - Sharp copies use at most 64 MB of memory with the game's own fonts, plus up to 64 MB more with HD fonts.
@@ -400,6 +403,8 @@ My other mod:
 
 Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos en lugar de borrosos y estirados. El juego sigue usando sus posiciones: nada se mueve ni se corta. Podés quedarte con la fuente de tu juego, ahora nítida, o elegir una fuente HD.
 
+**▶ [Video (4 min, narración en inglés con subtítulos en español): antes y después, instalación, el selector y las 35 fuentes](https://www.youtube.com/watch?v=AISb6npriI4)**
+
 **Novedades de la 1.0.1** (lista completa en el [changelog](CHANGELOG.md)):
 
 - **Fuentes HD:** con una fuente HD el texto se dibuja a la resolución de tu pantalla en lugar de estirarse desde 640x480 (probado a 1920x1080).
@@ -407,7 +412,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 - **`hdtext.exe`, una herramienta de configuración:** activa o apaga el mod, elige la fuente con vista previa, agrega tus propias fuentes y vuelve a la que tenías antes.
 - **Letras más prolijas con las fuentes del juego:** las fuentes finas conservan sus trazos, las letras cortadas se reparan y las redondas salen simétricas.
 - **Más texto nítido:** opciones de los menús, textos de ayuda, el reloj del partido y las etiquetas achicadas o en cursiva.
-- **Arreglo:** los escudos, las banderas y los íconos ya no se tocan por error.
+- **Arreglo:** los escudos, las banderas y los íconos ya no se tocan por error, y el módulo de escudos HD (`flags6.dll`) ya anda junto con el mod.
 
 **Instalación** (requiere Kitserver 6 con `afs2fs.dll` cargada en `kload.cfg`):
 
