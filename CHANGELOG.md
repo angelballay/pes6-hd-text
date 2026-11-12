@@ -6,15 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [1.0.1.1] - 2026-11-12
 
-Only `pes6_hd_text.dll` changes. To update from 1.0.1, copy it over the old one.
+To update from 1.0.1, just replace `pes6_hd_text.dll`.
 
 ### Fixed
 
-- **Works with PesAssetLoader** (the Plugin Loader and Asset Loader for PES 6 by Dmitri-F). The Asset Loader is loaded before Kitserver and hooks two of the functions PES6 HD Text needs (`0x0087A810` and `0x0040C270`). 1.0.1 found them changed and turned itself off, so with an HD font installed the text came out huge. 1.0.1.1 chains to the Asset Loader's hooks and both mods work together. Tested with an HD font and with HD crests loaded by the Asset Loader.
+- **Works with PesAssetLoader** (Dmitri-F's Plugin Loader + Asset Loader). With 1.0.1, PES6 HD Text turned itself off when the Asset Loader was installed (with an HD font, the text came out huge). Now both mods work together.
 
 ### Changed
 
-- **Hooks chain to other mods.** If another mod already hooked one of the 13 functions with a plain 5-byte jump and left the rest of the original bytes intact, PES6 HD Text now hooks on top of it instead of turning off: its own code runs first, then the other mod's, then the game's. Any other change at those spots is still left alone.
+- **Hooks chain to other mods.** If another mod already hooked one of the same game functions with a plain jump, PES6 HD Text now hooks on top of it instead of turning off.
 
 ## [1.0.1] - 2026-11-11
 
