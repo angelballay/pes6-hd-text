@@ -354,6 +354,12 @@ It also calls Direct3D 8 `CreateTexture` on the game's device (no hook there). [
 - In "Original" mode the DLL hooks nothing: the game is exactly as without the mod.
 - Sharp copies use at most 64 MB of memory with the game's own fonts, plus up to 64 MB more with HD fonts.
 
+**With PES6 Flags Module** (original PES 6, flags6 v4 and the HD_wide font): the HD crests and the team acronyms (FCB, RMA) come from flags6, the text from PES6 HD Text.
+
+![Team selection: HD crests from PES6 Flags Module and HD text from PES6 HD Text](images/1.0.1/flags6-team-select.png)
+
+![Match menu: team acronyms from PES6 Flags Module and HD text from PES6 HD Text](images/1.0.1/flags6-match-menu.png)
+
 ## Known limitations
 
 - **Text only.** Graphics that are images stay as they are: the title screen ("Press any button"), logos, icons, menu widgets and the scoreboard numbers (they are part of a texture).
