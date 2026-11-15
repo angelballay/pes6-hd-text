@@ -4,9 +4,15 @@
 
 A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.2.
 
-**[⬇ Download PES6 HD Text 1.0.1.2](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-1012) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
+**[⬇ Download PES6 HD Text 1.0.1.2](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-1012) · [Make your own font](#-make-your-own-hd-font-right-in-your-browser) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
 **▶ [Video (4 min): before vs after, install, the font picker and all 35 fonts](https://www.youtube.com/watch?v=AISb6npriI4)**
+
+## 🎨 Make your own HD font, right in your browser
+
+**[Pes6FontCreator](https://pes6fontcreator.com/en/) turns any TTF or OTF font into an HD font for PES6 HD Text.** Load your font, fill in the letters it is missing (automatically or one by one) and download your `HD_<name>.bin`. Then open `hdtext.exe` → **Add font...** → **Apply**. Nothing to install and nothing is uploaded: everything runs in your browser.
+
+**[✏️ Create your font at pes6fontcreator.com](https://pes6fontcreator.com/en/)**
 
 ## What's new in 1.0.1.2
 
@@ -438,6 +444,12 @@ My other mod:
 Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos en lugar de borrosos y estirados. El juego sigue usando sus posiciones: nada se mueve ni se corta. Podés quedarte con la fuente de tu juego, ahora nítida, o elegir una fuente HD.
 
 **▶ [Video (4 min, narración en inglés con subtítulos en español): antes y después, instalación, el selector y las 35 fuentes](https://www.youtube.com/watch?v=AISb6npriI4)**
+
+### 🎨 Hacé tu propia fuente HD, directo en el navegador
+
+**[Pes6FontCreator](https://pes6fontcreator.com/) convierte cualquier fuente TTF u OTF en una fuente HD para PES6 HD Text.** Cargás tu fuente, completás las letras que le faltan (automáticamente o una por una) y descargás tu `HD_<nombre>.bin`. Después abrís `hdtext.exe` → **Add font...** → **Apply**. No hay que instalar nada y no se sube nada: todo pasa en tu navegador.
+
+**[✏️ Creá tu fuente en pes6fontcreator.com](https://pes6fontcreator.com/)**
 
 **1.0.1.2:** el texto de los menús sigue nítido en sesiones largas, como la Liga Master. Después de un partido y un rato de menús, las opciones y los nombres de los jugadores podían salir borrosos; ya no. Además, `HD_original_font` dibuja sus símbolos en HD (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Y para hacer tu propia fuente HD: [Pes6FontCreator](https://pes6fontcreator.com/) convierte cualquier fuente TTF u OTF en una fuente HD para PES6 HD Text, en el navegador. ¿Ya tenés una versión anterior? Mirá la instalación más abajo.
 
