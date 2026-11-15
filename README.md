@@ -11,7 +11,8 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 ## What's new in 1.0.1.2
 
 - **Menu text stays sharp in long sessions, such as Master League.** After a match and some time in the menus, menu items and player names could come out blurry. Now they stay sharp.
-- Only `pes6_hd_text.dll` changes: to update from 1.0.1 or 1.0.1.1, copy it over the old one.
+- **`HD_original_font` draws its symbols in HD** (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Before, they were the game's 16 px symbols upscaled.
+- To update from 1.0.1 or 1.0.1.1, copy the zip's `Kitserver` folder over your old files. If you use `HD_original_font`, open `hdtext.exe` and press **Apply** to install the new one.
 
 ## What's new in 1.0.1.1
 
@@ -246,7 +247,7 @@ The game recreates many of these textures over and over, so the upscaled copies 
 
 Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with Kitserver 6 and with most patches). Don't have it yet? [Kitserver 6](https://www.mediafire.com/file/ljbcnczm893g1b6/kitserver.rar/file)
 
-**Updating from 1.0.1 or 1.0.1.1:** copy the new `pes6_hd_text.dll` over the old one. That's all.
+**Updating from 1.0.1 or 1.0.1.1:** copy the zip's `Kitserver` folder over your old files (`pes6_hd_text.dll`, `hdtext.exe` and `HD_original_font` change). If you use `HD_original_font`, open `hdtext.exe` and press **Apply** to install the new one.
 
 **Updating from 1.0:** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply**.
 
@@ -435,7 +436,7 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **▶ [Video (4 min, narración en inglés con subtítulos en español): antes y después, instalación, el selector y las 35 fuentes](https://www.youtube.com/watch?v=AISb6npriI4)**
 
-**1.0.1.2:** el texto de los menús sigue nítido en sesiones largas, como la Liga Master. Después de un partido y un rato de menús, las opciones y los nombres de los jugadores podían salir borrosos; ya no. Solo cambia `pes6_hd_text.dll`: si tenés la 1.0.1 o la 1.0.1.1, copiala encima de la anterior.
+**1.0.1.2:** el texto de los menús sigue nítido en sesiones largas, como la Liga Master. Después de un partido y un rato de menús, las opciones y los nombres de los jugadores podían salir borrosos; ya no. Además, `HD_original_font` dibuja sus símbolos en HD (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Si tenés la 1.0.1 o la 1.0.1.1, copiá la carpeta `Kitserver` del zip sobre tus archivos y, si usás `HD_original_font`, abrí `hdtext.exe` y apretá **Apply** para instalar la nueva.
 
 **1.0.1.1:** anda junto con PesAssetLoader (el Plugin Loader y Asset Loader de Dmitri-F). Con la 1.0.1, PES6 HD Text se apagaba si estaba instalado y, con una fuente HD, el texto salía gigante. Solo cambia `pes6_hd_text.dll`: si tenés la 1.0.1, copiala encima de la anterior.
 

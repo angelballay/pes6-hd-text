@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [1.0.1.2] - Unreleased
 
-To update from 1.0.1 or 1.0.1.1, just replace `pes6_hd_text.dll`.
+To update from 1.0.1 or 1.0.1.1, copy the zip's `Kitserver` folder over your old files. If you use `HD_original_font`, open `hdtext.exe` and press **Apply** to install the new one.
 
 ### Fixed
 
@@ -14,6 +14,8 @@ To update from 1.0.1 or 1.0.1.1, just replace `pes6_hd_text.dll`.
 
 ### Changed
 
+- **`HD_original_font`: its twelve symbols (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★) are now drawn in HD.** Before, they were the game's 16 px symbols upscaled.
+- **`hdtext.exe` recognises the previous `HD_original_font`.** If it is still installed, the tool shows "older version; press Apply to update it", and your patch's font stays as "Font before PES6 HD Text".
 - **One more hooked function**, `0x0095A6C0`: the game releases a letter from a letter sheet, and frees the sheet when it is empty. See "For mod makers" in the README.
 
 ## [1.0.1.1] - 2026-11-12
