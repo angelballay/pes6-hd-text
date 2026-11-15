@@ -2,16 +2,24 @@
 
 **PES 6's in-game text, sharp in HD: same fonts, same layout, and it works with any patch.**
 
-A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.1.
+A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.2.
 
-**[⬇ Download PES6 HD Text 1.0.1.1](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-1011) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
+**[⬇ Download PES6 HD Text 1.0.1.2](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-1012) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
 **▶ [Video (4 min): before vs after, install, the font picker and all 35 fonts](https://www.youtube.com/watch?v=AISb6npriI4)**
+
+## What's new in 1.0.1.2
+
+- **Menu text stays sharp in long sessions, such as Master League.** After a match and some time in the menus, menu items and player names could come out blurry. Now they stay sharp.
+- **`HD_original_font` draws its symbols in HD** (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Before, they were the game's 16 px symbols upscaled.
+
+  ![HD_original_font symbols: upscaled in 1.0.1.1, redrawn in HD in 1.0.1.2](images/1.0.1.2/hd-original-font-symbols.png)
+- **Make your own HD font:** [Pes6FontCreator](https://pes6fontcreator.com/en/) turns any TTF or OTF font into an HD font for PES6 HD Text, in your browser.
+- Already have an earlier version? See [Install](#install).
 
 ## What's new in 1.0.1.1
 
 - **Works with PesAssetLoader** (the Plugin Loader and Asset Loader by Dmitri-F). With 1.0.1, PES6 HD Text turned itself off when the Asset Loader was installed, and with an HD font the text came out huge. Now both mods work together.
-- Only `pes6_hd_text.dll` changes: to update from 1.0.1, copy it over the old one.
 
 ## What's new in 1.0.1
 
@@ -242,11 +250,11 @@ The game recreates many of these textures over and over, so the upscaled copies 
 
 Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with Kitserver 6 and with most patches). Don't have it yet? [Kitserver 6](https://www.mediafire.com/file/ljbcnczm893g1b6/kitserver.rar/file)
 
-**Updating from 1.0.1:** copy the new `pes6_hd_text.dll` over the old one. That's all.
+The zip is the full mod, not a patch: you don't need any earlier version.
 
-**Updating from 1.0:** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply**.
+**Updating from an earlier version (1.0, 1.0.1 or 1.0.1.1):** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply** (with `HD_original_font`, this installs the new one).
 
-1. Download `PES6_HD_Text_v1.0.1.1.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
+1. Download `PES6_HD_Text_v1.0.1.2.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
 2. Open `kload.cfg` with Notepad and add a line after the last `DLL.N`, using the next number. For example, if your last line is `DLL.25`:
    ```
    DLL.26 = "kitserver\pes6_hd_text.dll"
@@ -263,7 +271,7 @@ Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with 
 
 - **HD** turns the mod on. Pick a font from the list and check the preview. "Game font" keeps your game's own letters, made sharp.
 - **Original (mod off)** turns the mod off and puts back the font the game had before PES6 HD Text.
-- **Add font...** adds your own font file (`.bin`, the game's font 53 format). It is checked first, and files that are not a valid font are rejected.
+- **Add font...** adds your own font file (`.bin`, the game's font 53 format). It is checked first, and files that are not a valid font are rejected. To make your own HD font from any TTF or OTF font, use [Pes6FontCreator](https://pes6fontcreator.com/en/), in your browser.
 - **Installed** shows the font the game uses right now. It checks the file contents; if a font was installed by another tool or patch and is not one it knows, it says "unknown".
 - Fonts live in `Kitserver\GDB\fonts`, and the installed one is copied to `Kitserver\dat\0_text.afs`. Every replaced font is kept in `Kitserver\GDB\fonts\backup`, and the one you had before PES6 HD Text stays in the list as "Font before PES6 HD Text".
 - Windows asks for permission when you open it, because it writes in the game folder (often inside Program Files).
@@ -321,7 +329,7 @@ If you make fonts for PES 6, HD versions are very welcome:
 - 16 colours, and every letter cell at an integer multiple of the original (2x, 3x, 4x...). 4x gives the best result.
 - For a widescreen look, draw the letters 0.75 times as wide: the game stretches its menus from 4:3 to 16:9.
 
-"Add font..." in the tool checks all of this and says what is wrong. Share yours in an [issue](https://github.com/angelballay/pes6-hd-text/issues) and it can join the next version, with your credit.
+[Pes6FontCreator](https://pes6fontcreator.com/en/) makes fonts in this format from any TTF or OTF font, in your browser. "Add font..." in the tool checks all of this and says what is wrong. Share yours in an [issue](https://github.com/angelballay/pes6-hd-text/issues) and it can join the next version, with your credit.
 
 ## For mod makers: hooked functions
 
@@ -342,6 +350,7 @@ Each hook is a 5-byte jump at the start of a function of `pes6.exe` (PC); if the
 | `0x00959780` | Letter sheets | 8 | before (only notes its arguments) | draws a letter into a letter sheet | keeps the sharp sheet in step |
 | `0x008D18C0` | Letter sheets | 8 | before | copies pixels into an image | keeps the sharp sheet in step |
 | `0x00953080` | Shadow text | 10 | after | composes the image of a text, letter by letter | rebuilds shadow text with sharp letters |
+| `0x0095A6C0` | Freed sheets | 5 | before and after | releases a letter from a letter sheet, and frees the sheet when it is empty | lets go of the sharp copy of a freed sheet |
 
 Groups:
 
@@ -349,6 +358,7 @@ Groups:
 - **HD fonts:** hooked together. Without them there are no HD fonts, but the game's font is still sharpened.
 - **Letter sheets:** hooked together. Without them the sharp sheet is still built, a bit later, and the selected menu option may flicker.
 - **Shadow text:** on its own. If it can't be hooked, only the letter-by-letter rebuild of shadow text is turned off.
+- **Freed sheets** (since 1.0.1.2): on its own. If it can't be hooked, the mod keeps up to 64 sharp sheets and, when it needs room, drops the one used least recently.
 
 **If another mod already hooked one of these functions** (since 1.0.1.1): when a spot starts with a plain 5-byte jump (`E9`) into another module and the rest of the original bytes are intact, PES6 HD Text chains to it instead of turning off. Our code runs first, then the other mod's, then the game's. Any other change at a spot is left alone, as before. If your mod is loaded after ours and finds our jump there, please chain to it the same way instead of refusing to hook.
 
@@ -429,7 +439,9 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **▶ [Video (4 min, narración en inglés con subtítulos en español): antes y después, instalación, el selector y las 35 fuentes](https://www.youtube.com/watch?v=AISb6npriI4)**
 
-**1.0.1.1:** anda junto con PesAssetLoader (el Plugin Loader y Asset Loader de Dmitri-F). Con la 1.0.1, PES6 HD Text se apagaba si estaba instalado y, con una fuente HD, el texto salía gigante. Solo cambia `pes6_hd_text.dll`: si tenés la 1.0.1, copiala encima de la anterior.
+**1.0.1.2:** el texto de los menús sigue nítido en sesiones largas, como la Liga Master. Después de un partido y un rato de menús, las opciones y los nombres de los jugadores podían salir borrosos; ya no. Además, `HD_original_font` dibuja sus símbolos en HD (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Y para hacer tu propia fuente HD: [Pes6FontCreator](https://pes6fontcreator.com/) convierte cualquier fuente TTF u OTF en una fuente HD para PES6 HD Text, en el navegador. ¿Ya tenés una versión anterior? Mirá la instalación más abajo.
+
+**1.0.1.1:** anda junto con PesAssetLoader (el Plugin Loader y Asset Loader de Dmitri-F). Con la 1.0.1, PES6 HD Text se apagaba si estaba instalado y, con una fuente HD, el texto salía gigante.
 
 **Novedades de la 1.0.1** (lista completa en el [changelog](CHANGELOG.md)):
 
@@ -442,9 +454,11 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **Instalación** (requiere Kitserver 6 con `afs2fs.dll` cargada en `kload.cfg`):
 
-**Si ya tenés la 1.0:** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `hdtext.exe` y apretá **Apply**.
+El zip es el mod completo, no un parche: no hace falta ninguna versión anterior.
 
-1. Descargá `PES6_HD_Text_v1.0.1.1.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
+**Si ya tenés una versión anterior (1.0, 1.0.1 o 1.0.1.1):** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `hdtext.exe` y apretá **Apply** (con `HD_original_font`, así se instala la nueva).
+
+1. Descargá `PES6_HD_Text_v1.0.1.2.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
 2. Abrí `kload.cfg` y agregá una línea después de la última `DLL.N`, con el número siguiente, por ejemplo `DLL.26 = "kitserver\pes6_hd_text.dll"`.
 3. Sumale 1 a `DLL.num`.
 4. Abrí `Kitserver\hdtext.exe`, elegí una fuente y apretá **Apply**.

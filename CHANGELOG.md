@@ -4,6 +4,20 @@ All notable changes to PES6 HD Text are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.1.2] - 2026-11-15
+
+The zip is the full mod. To update from an earlier version, copy its `Kitserver` folder over your old files and keep your `kload.cfg` line, then open `hdtext.exe` and press **Apply** (with `HD_original_font`, this installs the new one).
+
+### Fixed
+
+- **Menu text stays sharp in long sessions, such as Master League.** After a match and some time in the menus (player growth, line-up), menu items and player names could lose the sharp letters and come out blurry. The cause: the mod never found out when the game freed one of its letter sheets, so the old ones piled up until it dropped all of them, the sheets still on screen included. Now the mod lets go of each sheet when the game frees it.
+
+### Changed
+
+- **`HD_original_font`: its twelve symbols (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★) are now drawn in HD.** Before, they were the game's 16 px symbols upscaled.
+- **`hdtext.exe` recognises the previous `HD_original_font`.** If it is still installed, the tool shows "older version; press Apply to update it", and your patch's font stays as "Font before PES6 HD Text".
+- **One more hooked function**, `0x0095A6C0`: the game releases a letter from a letter sheet, and frees the sheet when it is empty. See "For mod makers" in the README.
+
 ## [1.0.1.1] - 2026-11-12
 
 To update from 1.0.1, just replace `pes6_hd_text.dll`.
@@ -67,6 +81,7 @@ To update from 1.0.1, just replace `pes6_hd_text.dll`.
 - The game's text is handed to the video card at twice the resolution, with the same fonts and positions.
 - Works with the font of any patch (tested with PES 6 The Den Patch 2026).
 
+[1.0.1.2]: https://github.com/angelballay/pes6-hd-text/compare/v1.0.1.1...v1.0.1.2
 [1.0.1.1]: https://github.com/angelballay/pes6-hd-text/compare/v1.0.1...v1.0.1.1
 [1.0.1]: https://github.com/angelballay/pes6-hd-text/compare/v1.0...v1.0.1
 [1.0]: https://github.com/angelballay/pes6-hd-text/releases/tag/v1.0
