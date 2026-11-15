@@ -12,6 +12,8 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 
 - **Menu text stays sharp in long sessions, such as Master League.** After a match and some time in the menus, menu items and player names could come out blurry. Now they stay sharp.
 - **`HD_original_font` draws its symbols in HD** (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Before, they were the game's 16 px symbols upscaled.
+
+  ![HD_original_font symbols: upscaled in 1.0.1.1, redrawn in HD in 1.0.1.2](images/1.0.1.2/hd-original-font-symbols.png)
 - To update from 1.0.1 or 1.0.1.1, copy the zip's `Kitserver` folder over your old files. If you use `HD_original_font`, open `hdtext.exe` and press **Apply** to install the new one.
 
 ## What's new in 1.0.1.1
