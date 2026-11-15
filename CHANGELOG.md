@@ -4,9 +4,9 @@ All notable changes to PES6 HD Text are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [1.0.1.2] - Unreleased
+## [1.0.1.2] - 2026-11-15
 
-To update from 1.0.1 or 1.0.1.1, copy the zip's `Kitserver` folder over your old files. If you use `HD_original_font`, open `hdtext.exe` and press **Apply** to install the new one.
+The zip is the full mod. To update from an earlier version, copy its `Kitserver` folder over your old files and keep your `kload.cfg` line, then open `hdtext.exe` and press **Apply** (with `HD_original_font`, this installs the new one).
 
 ### Fixed
 
