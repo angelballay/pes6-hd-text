@@ -310,7 +310,7 @@ If your patch ships a font that is already bigger than the original (an HD font)
 2. Remove the `pes6_hd_text.dll` line from `kload.cfg` and put `DLL.num` back to its previous value.
 3. Delete `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg` and the `HD_*.bin` fonts in `Kitserver\GDB\fonts`. Keep the `backup` folder there: it has your previous fonts.
 
-Don't leave an HD font installed without the DLL: the game can't load an HD font on its own.
+Don't leave an HD font installed without the DLL: the game still loads it, but without the DLL it draws every letter at the font's HD size, so all text comes out several times too big.
 
 ## How the mod handles each font
 
@@ -487,7 +487,7 @@ El zip es el mod completo, no un parche: no hace falta ninguna versión anterior
 
 En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dentro de los archivos del juego (como The Den Patch 2026), o **"Font before PES6 HD Text"** si la instaló con Kitserver.
 
-**Desinstalar:** en `hdtext.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
+**Desinstalar:** en `hdtext.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego la carga igual, pero sin la DLL dibuja cada letra al tamaño HD de la fuente y todos los textos salen varias veces más grandes.
 
 **¿Hacés fuentes o mods?** Las fuentes HD son bienvenidas: el formato está en [For font makers](#for-font-makers). Si tu mod engancha alguna función del juego, fijate la lista en [For mod makers](#for-mod-makers-hooked-functions) y coordinemos para no pisarnos.
 
