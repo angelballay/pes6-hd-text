@@ -4,6 +4,35 @@ All notable changes to PES6 HD Text are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.2] - 2026-11-21
+
+From now on, PES6 HD Text can update itself, and it can add extra languages to the game. This version is installed with the new installer (or by hand, as before); the next ones arrive with the **Update** button of `hdtext.exe`.
+
+### Added
+
+- **Installer.** Extract the whole zip and open `Kitserver\hdtext.exe` from the extracted folder. Choose your PES6 folder and press **Install** (or **Update**, over an earlier version). It checks every file against the list signed by the author, saves a copy of whatever it replaces, adds the line to `kload.cfg` (saving the old one first) and opens the installed `hdtext.exe`. Your settings, your fonts and your font backups are kept.
+- **Updates.** When the game starts in HD mode, the mod checks at most once a day whether there is a new version. If there is, a short notice appears at the bottom left for six seconds: `PES6 HD Text 1.0.3 is available. Open hdtext.exe to update.` Without internet, or if anything goes wrong, nothing is shown and the game starts as usual.
+- **`hdtext.exe` updates the mod.** A new **Updates** box shows the installed version and, when there is a new one, **What's new** and **Update to …**. It downloads the new version, checks its signature and every file, and installs it with the game closed. Your settings, your chosen font, your own fonts and your font backups are kept.
+- **Go back.** The previous version is kept: **Go back to …** puts it back (the new `hdtext.exe` stays, so you can return).
+- **One switch for the notices:** "Show update notices (here and in the game)". **Check now** always works.
+- **Languages tab.** It lists the languages available on the website, each with a link to its page. Download a language's `.zip` there, then **Load a language file…** (several at once, or drop them on the window): `hdtext.exe` checks that it's the author's and puts it in the game's language menu. **Use**, **None** and **Remove** work right away. PES6 HD Text itself doesn't include any translation: each language file brings the small PES6 Translations add-on that shows it in the menu, and `hdtext.exe` installs it and keeps it up to date.
+- **Languages go where the game reads them.** PES6 reads its files from the folder written in its registry key, not always from the folder `pes6.exe` is in. `hdtext.exe` reads the key your `pes6.exe` uses (copies of the game and patches with their own key included), installs the language in that folder's `dat` and says where it went. If that isn't the folder you chose, it asks first.
+- **Fonts with the language's letters.** When a language goes into the game's menu and your font lacks some of its letters (the game's own font has no Greek or Cyrillic), `hdtext.exe` asks right then whether to switch to the Original style font, which has them all. If you keep yours, the tab says which letters are missing. And with a language in the menu, **Apply** warns before switching to a font that lacks some of its letters.
+- **Greek, Cyrillic and more Latin letters in the fonts.** Each included font now has every letter its original font has (Greek and Cyrillic only when the original has the whole alphabet). `HD_original_font` gains 297 letters (Greek, Cyrillic, extended Latin and №). Fonts with every letter used by each language: Russian, 6 (`HD_original_font`, `HD_fira_sans`, `HD_humanist`, `HD_montserrat`, `HD_oswald`, `HD_rubik`); Greek, 3 (`HD_original_font`, `HD_fira_sans`, `HD_humanist`); Turkish, Serbian and Croatian, 25; the game's six languages and Brazilian Portuguese, 32 of 35.
+- **One more hooked function**, only while the update notice is on screen: `IDirect3DDevice8::EndScene`. See "For mod makers" in the README.
+
+### Fixed
+
+- **Skill numbers line up with HD fonts.** The game places each number by its width, and its own font has ten digits of the same width. With fonts whose digits have different widths (`HD_wide` and 29 more of the included ones), the columns of skill numbers came out shifted. Now every digit takes the width of the widest one, centred.
+- **HD fonts with 16 shades of white** in their palette showed grey, see-through skill numbers. They are now converted to the game's palette when the font loads.
+- **Letters no longer lose their last column** in HD fonts whose letter widths aren't a multiple of the font's scale: the width is rounded up, so the letter doesn't run into the next one.
+
+### Changed
+
+- `hdtext.exe` has two tabs, **Font** and **Languages**.
+- `hdtext.exe` keeps every line of `hdtext.cfg` it doesn't know (for example `translation` and `translation_name`).
+- `hdtext.exe` recognises the included fonts of earlier versions, so **Apply** replaces them with the new ones instead of keeping them as "Font before PES6 HD Text".
+
 ## [1.0.1.2] - 2026-11-15
 
 The zip is the full mod. To update from an earlier version, copy its `Kitserver` folder over your old files and keep your `kload.cfg` line, then open `hdtext.exe` and press **Apply** (with `HD_original_font`, this installs the new one).
@@ -81,6 +110,7 @@ To update from 1.0.1, just replace `pes6_hd_text.dll`.
 - The game's text is handed to the video card at twice the resolution, with the same fonts and positions.
 - Works with the font of any patch (tested with PES 6 The Den Patch 2026).
 
+[1.0.2]: https://github.com/angelballay/pes6-hd-text/compare/v1.0.1.2...v1.0.2
 [1.0.1.2]: https://github.com/angelballay/pes6-hd-text/compare/v1.0.1.1...v1.0.1.2
 [1.0.1.1]: https://github.com/angelballay/pes6-hd-text/compare/v1.0.1...v1.0.1.1
 [1.0.1]: https://github.com/angelballay/pes6-hd-text/compare/v1.0...v1.0.1

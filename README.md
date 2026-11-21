@@ -2,9 +2,9 @@
 
 **PES 6's in-game text, sharp in HD: same fonts, same layout, and it works with any patch.**
 
-A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.1.2.
+A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 1.0.2.
 
-**[⬇ Download PES6 HD Text 1.0.1.2](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-1012) · [Make your own font](#-make-your-own-hd-font-right-in-your-browser) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
+**[⬇ Download PES6 HD Text 1.0.2](https://github.com/angelballay/pes6-hd-text/releases/latest)** · [What's new](#whats-new-in-102) · [Make your own font](#-make-your-own-hd-font-right-in-your-browser) · [Install](#install) · [Choosing a font](#choosing-a-font) · [With your patch's font](#using-it-with-your-patchs-font) · [Languages](#languages) · [Updates](#updates) · [Compatibility](#compatibility) · [Known limitations](#known-limitations) · [Changelog](CHANGELOG.md) · [Español](#español)
 
 **▶ [Video (4 min): before vs after, install, the font picker and all 35 fonts](https://www.youtube.com/watch?v=AISb6npriI4)**
 
@@ -13,6 +13,16 @@ A Kitserver 6 module for Pro Evolution Soccer 6 (PC) by **pitycharly**. Version 
 **[Pes6FontCreator](https://pes6fontcreator.com/en/) turns any TTF or OTF font into an HD font for PES6 HD Text.** Load your font, fill in the letters it is missing (automatically or one by one) and download your `HD_<name>.bin`. Then open `hdtext.exe` → **Add font...** → **Apply**. Nothing to install and nothing is uploaded: everything runs in your browser.
 
 **[✏️ Create your font at pes6fontcreator.com](https://pes6fontcreator.com/en/)**
+
+## What's new in 1.0.2
+
+- **Installer:** extract the zip, open `Kitserver\hdtext.exe` from it, choose your PES6 folder and press **Install** (or **Update** over an earlier version). See [Install](#install).
+- **Updates from `hdtext.exe`:** when there is a new version, the game shows a short notice and `hdtext.exe` installs it with **Update to …**, checking the author's signature first. **Go back** returns to the previous one. See [Updates](#updates).
+- **Languages:** the new **Languages** tab loads the extra languages from the [Translations section of the website](https://pes6fontcreator.com/translations/) into the game's language menu, in the folder the game really reads. See [Languages](#languages).
+- **Greek, Cyrillic and more Latin letters** in the included fonts (`HD_original_font`, `HD_fira_sans` and `HD_humanist` have them all).
+- **Fixed:** skill numbers line up again with HD fonts.
+
+Full list in the [changelog](CHANGELOG.md).
 
 ## What's new in 1.0.1.2
 
@@ -236,7 +246,8 @@ Same zone of the same screen, before and after. The "after" capture is the one r
 - **HD fonts at your screen's resolution:** 35 included, from the original PES 6 look to pixel, marker, stencil, comic or neon styles.
 - **Works with whatever font your patch uses.** PES 6 The Den Patch 2026 ships its own font and gets sharp too.
 - **Any game language.** It works on whatever text the game draws, so it doesn't depend on the language (tested in Spanish).
-- **A settings tool** (`hdtext.exe`) to turn it on or off and choose the font, with a preview.
+- **A settings tool** (`hdtext.exe`) to turn it on or off and choose the font, with a preview. It also installs and updates the mod.
+- **Extra languages:** the **Languages** tab of `hdtext.exe` adds the languages of the website (Greek, Croatian, Indonesian, Brazilian Portuguese, Russian, Serbian, Turkish…) to the game's language menu.
 
 ## How it works
 
@@ -258,9 +269,21 @@ Requires **Kitserver 6** with `afs2fs.dll` loaded in `kload.cfg` (it comes with 
 
 The zip is the full mod, not a patch: you don't need any earlier version.
 
-**Updating from an earlier version (1.0, 1.0.1 or 1.0.1.1):** copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply** (with `HD_original_font`, this installs the new one).
+**With the installer (recommended)**
 
-1. Download `PES6_HD_Text_v1.0.1.2.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and copy everything inside its `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
+1. Download `PES6_HD_Text_v1.0.2.zip` from [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) and extract the whole zip (right click → **Extract All**). Don't run anything from inside the zip.
+2. Open `Kitserver\hdtext.exe` from the extracted folder.
+3. Check the PES6 folder it proposes (or press **Browse…**) and press **Install**. Over an earlier version (1.0 to 1.0.1.2) the button says **Update**: your settings and fonts are kept.
+4. The installed `hdtext.exe` opens: pick a font and press **Apply** (see [Choosing a font](#choosing-a-font)).
+5. Start the game.
+
+The installer checks every file against the list signed by the author, saves a copy of whatever it replaces, and adds `DLL.N = "kitserver\pes6_hd_text.dll"` to `Kitserver\kload.cfg` (saving the old one in `Kitserver\pes6pkg\backup\kload.cfg\`). If your `kload.cfg` has an unusual layout, it doesn't touch it and tells you the line to add. From 1.0.2 on, new versions are installed from `hdtext.exe` itself (see [Updates](#updates)).
+
+**Is this zip the author's?** Before the first install, compare the zip's SHA-256 with the one shown on the [release page](https://github.com/angelballay/pes6-hd-text/releases): `certutil -hashfile PES6_HD_Text_v1.0.2.zip SHA256`. After that, every update is checked by `hdtext.exe` itself.
+
+**By hand**
+
+1. Copy everything inside the zip's `Kitserver` folder into your game's Kitserver folder (the one with `kload.cfg`).
 2. Open `kload.cfg` with Notepad and add a line after the last `DLL.N`, using the next number. For example, if your last line is `DLL.25`:
    ```
    DLL.26 = "kitserver\pes6_hd_text.dll"
@@ -269,11 +292,13 @@ The zip is the full mod, not a patch: you don't need any earlier version.
 4. Run `Kitserver\hdtext.exe`, pick a font and press **Apply** (see [Choosing a font](#choosing-a-font)).
 5. Start the game.
 
+Updating by hand from an earlier version: copy the zip's `Kitserver` folder over your old files and keep the `pes6_hd_text.dll` line you already have in `kload.cfg` (don't add another one). Then run `hdtext.exe` and press **Apply** (if your font is one of the included ones, this installs its new version).
+
 ## Choosing a font
 
-`hdtext.exe` is a small settings tool that lives in your Kitserver folder.
+`hdtext.exe` is a small settings tool that lives in your Kitserver folder. The **Font** tab picks the font (and has the **Updates** box); the **Languages** tab adds languages (see [Languages](#languages)).
 
-![The settings tool: mode, font list with preview, installed font and help](images/1.0.1/settings-tool.png)
+![The settings tool, Font tab: mode, font list with preview, the font in use and the Updates box](images/1.0.2/settings-tool.png)
 
 - **HD** turns the mod on. Pick a font from the list and check the preview. "Game font" keeps your game's own letters, made sharp.
 - **Original (mod off)** turns the mod off and puts back the font the game had before PES6 HD Text.
@@ -304,13 +329,41 @@ Where your patch's font shows up in the list:
 
 If your patch ships a font that is already bigger than the original (an HD font), the mod detects it and uses it as HD by itself.
 
+## Languages
+
+PES6 HD Text doesn't include any translation. The **Languages** tab of `hdtext.exe` adds the languages you download from the [Translations section of the website](https://pes6fontcreator.com/translations/) to the game's language menu:
+
+1. Download the language's `.zip` (no need to unzip it). The **Get it ↗** link next to each language in the tab opens its page.
+2. Open `Kitserver\hdtext.exe` → **Languages** → **Load a language file…** (or drop the `.zip` on the window; several at once work too).
+3. Start PES6 and choose the language on its language screen.
+
+![The Languages tab with the seven languages installed and Greek in the game menu](images/1.0.2/languages.png)
+
+**Use** puts another installed language in the game's menu, **None** leaves only the game's own languages, and **Remove** deletes a language (you can load it again later). Each language file is checked before anything is installed: it must be signed by its author.
+
+**Where the language goes.** PES6 reads its files from the folder written in its registry key, not always from the folder `pes6.exe` is in (patches and copies of the game often have their own key). `hdtext.exe` reads the key your `pes6.exe` uses and installs the language in that folder's `dat`; the tab always says which folder that is. If it isn't the folder you chose, `hdtext.exe` asks before installing there. If it can't find out (no key, for example), it installs in the folder you chose and tells you.
+
+**The add-on.** Each language file also brings the small PES6 Translations add-on (`Kitserver\translations.dll`) that puts it in the game's menu: `hdtext.exe` installs it the first time, adds it to `kload.cfg` after PES6 HD Text, and keeps it up to date. It can also be installed on its own from [its page](https://pes6fontcreator.com/mods/pes6-translations/).
+
+**Fonts and letters.** The game's own font has no Greek or Cyrillic. When a language goes into the menu and your font lacks some of its letters, `hdtext.exe` asks right then: **Use Original style** switches to `HD_original_font`, which has the letters of every language (and turns HD on, if it was off); **Keep my font** leaves it, and the tab says which letters are missing (they would show as gaps) with a **Change font** link. With a language in the menu, **Apply** in the Font tab also warns before you switch to a font that lacks some of its letters (**Apply anyway** / **Cancel**). Fonts with every letter: Russian, `HD_original_font`, `HD_fira_sans`, `HD_humanist`, `HD_montserrat`, `HD_oswald` and `HD_rubik`; Greek, `HD_original_font`, `HD_fira_sans` and `HD_humanist`; Turkish, Serbian and Croatian, 25 of the 35 fonts.
+
+## Updates
+
+- **What is checked, and when.** When the game starts in HD mode, the mod downloads a small signed file (the update index, `index.json` and `index.json.minisig` from [pes6-package-pc](https://github.com/angelballay/pes6-package-pc)) at most once a day, in the background. It sends nothing about you: the request only says `PES6-HD-Text/<version>`. If there is a new version, a notice shows at the bottom left for six seconds. `hdtext.exe` checks the same file when it opens, and the **Languages** tab reads it for the list of languages.
+- **Updating.** In `hdtext.exe`, the **Updates** box shows **What's new** and **Update to …**. Close the game and press it: `hdtext.exe` downloads the new version, checks it and installs it. Your settings, your chosen font, your own fonts and your font backups are kept. **Go back to …** puts the previous version back.
+- **What is trusted.** Only files signed with the author's keys, which are built into the DLL and `hdtext.exe`. The index has a number that only goes up and an expiry date, so an old or frozen index is refused. The new version is downloaded only from this repository's releases, and every file is checked (size and SHA-256) before anything is replaced. The game's DLL never downloads or installs anything: only `hdtext.exe` does, with the game closed.
+- **Where things go.** The installed version's signed list is `Kitserver\pes6pkg\installed\hdtext.json` (and one per language and for the add-on, next to it); the copy of the previous version is in `Kitserver\pes6pkg\backup\hdtext\`; the last check is in `%LOCALAPPDATA%\pes6pkg\state.json`. Nothing else is written.
+- **Turn it off.** In `hdtext.exe`, untick "Show update notices (here and in the game)" and press **Apply** (or write `update_notices = off` in `Kitserver\hdtext.cfg`). **Check now** still works, and opening the **Languages** tab still gets the list of languages (that's all it does: nothing is installed without you).
+- **Check a release by hand.** Each release has `hdtext-<version>.manifest.json` and its `.minisig`. With [minisign](https://jedisct1.github.io/minisign/): `minisign -V -m hdtext-1.0.2.manifest.json -P <key>`, where `<key>` is `RWS7wuC0DnGGHP2i5pQqa+6i1+2jlKAAKZy2lTZE7Oowjpj+Q20SM8bk` (or the backup key `RWRnKVDQsYSi5wxWs3QDeC6a7oytrgvwWKsqOxGS0IUMwkw8CGTsF9lL`). The manifest lists the SHA-256 of every file in the zip.
+
 ## Uninstall
 
-1. Run `hdtext.exe`, choose **Original (mod off)** and press **Apply**. This puts back the font you had before.
-2. Remove the `pes6_hd_text.dll` line from `kload.cfg` and put `DLL.num` back to its previous value.
-3. Delete `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg` and the `HD_*.bin` fonts in `Kitserver\GDB\fonts`. Keep the `backup` folder there: it has your previous fonts.
+1. Run `hdtext.exe`. If you added languages, **Remove** each one in the **Languages** tab. Then, in the **Font** tab, choose **Original (mod off)** and press **Apply**. This puts back the font you had before.
+2. Remove the `pes6_hd_text.dll` line from `kload.cfg` (and the `translations.dll` line, if you added languages) and lower `DLL.num` by the number of lines you removed.
+3. Delete `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg`, `translations.dll` (if it's there) and the `HD_*.bin` fonts in `Kitserver\GDB\fonts`. Keep the `backup` folder there: it has your previous fonts.
+4. Delete `Kitserver\pes6pkg` (signed lists and backups) and, if you like, `%LOCALAPPDATA%\pes6pkg\state.json`.
 
-Don't leave an HD font installed without the DLL: the game can't load an HD font on its own.
+Don't leave an HD font installed without the DLL: the game still loads it, but without the DLL it draws every letter at the font's HD size, so all text comes out several times too big.
 
 ## How the mod handles each font
 
@@ -357,6 +410,7 @@ Each hook is a 5-byte jump at the start of a function of `pes6.exe` (PC); if the
 | `0x008D18C0` | Letter sheets | 8 | before | copies pixels into an image | keeps the sharp sheet in step |
 | `0x00953080` | Shadow text | 10 | after | composes the image of a text, letter by letter | rebuilds shadow text with sharp letters |
 | `0x0095A6C0` | Freed sheets | 5 | before and after | releases a letter from a letter sheet, and frees the sheet when it is empty | lets go of the sharp copy of a freed sheet |
+| `IDirect3DDevice8::EndScene` (method 35 of the device table) | Update notice | — (table entry, not code) | before | ends a frame | draws the 6-second update notice |
 
 Groups:
 
@@ -365,6 +419,7 @@ Groups:
 - **Letter sheets:** hooked together. Without them the sharp sheet is still built, a bit later, and the selected menu option may flicker.
 - **Shadow text:** on its own. If it can't be hooked, only the letter-by-letter rebuild of shadow text is turned off.
 - **Freed sheets** (since 1.0.1.2): on its own. If it can't be hooked, the mod keeps up to 64 sharp sheets and, when it needs room, drops the one used least recently.
+- **Update notice** (since 1.0.2): the only hook outside `pes6.exe` and the only temporary one. While the notice is on screen (six seconds, at most once a day, only when there is a new version), the mod points entry 35 of the Direct3D 8 device table to its own function, which draws the notice and then calls whatever was there before (d3d8, a wrapper such as dgVoodoo, or another mod). When the notice ends, it puts the previous entry back, unless another mod changed the entry in the meantime: then it stays in the chain and just passes through.
 
 **If another mod already hooked one of these functions** (since 1.0.1.1): when a spot starts with a plain 5-byte jump (`E9`) into another module and the rest of the original bytes are intact, PES6 HD Text chains to it instead of turning off. Our code runs first, then the other mod's, then the game's. Any other change at a spot is left alone, as before. If your mod is loaded after ours and finds our jump there, please chain to it the same way instead of refusing to hook.
 
@@ -451,6 +506,14 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 **[✏️ Creá tu fuente en pes6fontcreator.com](https://pes6fontcreator.com/)**
 
+**Novedades de la 1.0.2** (lista completa en el [changelog](CHANGELOG.md)):
+
+- **Instalador:** extraés el zip, abrís `Kitserver\hdtext.exe` desde ahí, elegís la carpeta de PES6 y tocás **Install** (o **Update** sobre una versión anterior).
+- **Actualizaciones desde `hdtext.exe`:** cuando hay una versión nueva, el juego muestra un aviso corto y `hdtext.exe` la instala con **Update to …**, comprobando antes la firma del autor. **Go back** vuelve a la anterior.
+- **Idiomas:** la pestaña nueva **Languages** carga los idiomas de la [sección Traducciones de la web](https://pes6fontcreator.com/translations/) en el menú de idiomas del juego, en la carpeta que el juego lee de verdad.
+- **Letras griegas, cirílicas y más latinas** en las fuentes incluidas (`HD_original_font`, `HD_fira_sans` y `HD_humanist` las tienen todas).
+- **Arreglo:** los números de habilidad vuelven a quedar alineados con las fuentes HD.
+
 **1.0.1.2:** el texto de los menús sigue nítido en sesiones largas, como la Liga Master. Después de un partido y un rato de menús, las opciones y los nombres de los jugadores podían salir borrosos; ya no. Además, `HD_original_font` dibuja sus símbolos en HD (℃ ← ↑ → ↓ □ ■ △ ▲ ○ ● ★). Y para hacer tu propia fuente HD: [Pes6FontCreator](https://pes6fontcreator.com/) convierte cualquier fuente TTF u OTF en una fuente HD para PES6 HD Text, en el navegador. ¿Ya tenés una versión anterior? Mirá la instalación más abajo.
 
 **1.0.1.1:** anda junto con PesAssetLoader (el Plugin Loader y Asset Loader de Dmitri-F). Con la 1.0.1, PES6 HD Text se apagaba si estaba instalado y, con una fuente HD, el texto salía gigante.
@@ -468,13 +531,17 @@ Los menús, los nombres de jugadores y de equipos y los títulos se ven nítidos
 
 El zip es el mod completo, no un parche: no hace falta ninguna versión anterior.
 
-**Si ya tenés una versión anterior (1.0, 1.0.1 o 1.0.1.1):** copiá la carpeta `Kitserver` del zip sobre tus archivos y dejá la línea de `pes6_hd_text.dll` que ya tenés en `kload.cfg` (no agregues otra). Después abrí `hdtext.exe` y apretá **Apply** (con `HD_original_font`, así se instala la nueva).
+**Con el instalador (recomendado):**
 
-1. Descargá `PES6_HD_Text_v1.0.1.2.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y copiá todo lo que está dentro de su carpeta `Kitserver` en la carpeta Kitserver del juego (la que tiene `kload.cfg`).
-2. Abrí `kload.cfg` y agregá una línea después de la última `DLL.N`, con el número siguiente, por ejemplo `DLL.26 = "kitserver\pes6_hd_text.dll"`.
-3. Sumale 1 a `DLL.num`.
-4. Abrí `Kitserver\hdtext.exe`, elegí una fuente y apretá **Apply**.
+1. Descargá `PES6_HD_Text_v1.0.2.zip` desde [Releases](https://github.com/angelballay/pes6-hd-text/releases/latest) y extraé el zip entero (clic derecho → **Extraer todo**). No abras nada desde adentro del zip.
+2. Abrí `Kitserver\hdtext.exe` desde la carpeta extraída.
+3. Revisá la carpeta de PES6 que propone (o tocá **Browse…**) y tocá **Install**. Sobre una versión anterior (de la 1.0 a la 1.0.1.2) el botón dice **Update**: tu configuración y tus fuentes se conservan.
+4. Se abre el `hdtext.exe` instalado: elegí una fuente y apretá **Apply**.
 5. A jugar.
+
+El instalador comprueba cada archivo contra la lista firmada por el autor, guarda una copia de lo que reemplaza y agrega la línea a `kload.cfg` (con una copia del anterior en `Kitserver\pes6pkg\backup\kload.cfg\`). Si tu `kload.cfg` tiene un formato raro, no lo toca y te dice la línea a agregar. ¿Querés comprobar que el zip es el del autor? Antes de la primera instalación, compará su SHA-256 con el de la [página del release](https://github.com/angelballay/pes6-hd-text/releases): `certutil -hashfile PES6_HD_Text_v1.0.2.zip SHA256`.
+
+**A mano:** copiá todo lo que está dentro de la carpeta `Kitserver` del zip en la carpeta Kitserver del juego (la que tiene `kload.cfg`), agregá en `kload.cfg` una línea después de la última `DLL.N`, con el número siguiente (por ejemplo `DLL.26 = "kitserver\pes6_hd_text.dll"`), sumale 1 a `DLL.num`, abrí `Kitserver\hdtext.exe`, elegí una fuente y apretá **Apply**. Si ya tenías una versión anterior, dejá la línea que ya tenés en `kload.cfg` (no agregues otra).
 
 **Elegir la fuente:** en `hdtext.exe`, **HD** activa el mod con la fuente que elijas de la lista, y **Original (mod off)** lo apaga y vuelve a poner la fuente que tenías antes. Cada fuente reemplazada queda guardada en `Kitserver\GDB\fonts\backup`. Las 35 fuentes HD también están en la carpeta [fonts](fonts) de este repo, con sus licencias.
 
@@ -487,7 +554,11 @@ El zip es el mod completo, no un parche: no hace falta ninguna versión anterior
 
 En la lista, la fuente de tu parche es **"Game font"** si el parche la trae dentro de los archivos del juego (como The Den Patch 2026), o **"Font before PES6 HD Text"** si la instaló con Kitserver.
 
-**Desinstalar:** en `hdtext.exe` elegí **Original (mod off)** y apretá **Apply**. Después borrá la línea de `kload.cfg`, volvé `DLL.num` a su valor anterior y borrá `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego solo no puede cargarla.
+**Idiomas:** PES6 HD Text no trae traducciones. En `hdtext.exe` → **Languages**: descargá el `.zip` del idioma en la [web](https://pes6fontcreator.com/translations/) (el enlace **Get it ↗** de cada idioma abre su página), tocá **Load a language file…** (o soltá el `.zip` sobre la ventana; podés cargar varios a la vez) y elegí el idioma en la pantalla de idiomas del juego. **Use** pone otro idioma instalado en el menú, **None** deja solo los del juego y **Remove** borra uno. El idioma se instala en la carpeta `dat` que el juego lee de verdad (la de la clave de registro de tu `pes6.exe`, que en los parches y las copias del juego puede ser otra); la pestaña dice cuál es y, si no es la carpeta que elegiste, pregunta antes. Cada archivo de idioma trae el complemento PES6 Translations (`Kitserver\translations.dll`), que `hdtext.exe` instala y mantiene al día. La fuente del juego no tiene griego ni cirílico: cuando un idioma entra al menú y a tu fuente le faltan letras suyas, `hdtext.exe` pregunta en ese momento; **Use Original style** pasa a `HD_original_font`, que las tiene todas, y **Keep my font** la deja (la pestaña dice qué letras faltan). Con un idioma en el menú, **Apply** también avisa antes de pasar a una fuente a la que le faltan letras suyas. Tienen todas, para el ruso, `HD_original_font`, `HD_fira_sans`, `HD_humanist`, `HD_montserrat`, `HD_oswald` y `HD_rubik`; para el griego, `HD_original_font`, `HD_fira_sans` y `HD_humanist`.
+
+**Actualizaciones:** cuando el juego arranca en modo HD, el mod consulta como mucho una vez por día un archivo firmado (el índice de [pes6-package-pc](https://github.com/angelballay/pes6-package-pc)); no manda nada tuyo. Si hay una versión nueva, muestra un aviso abajo a la izquierda durante seis segundos. En `hdtext.exe`, el recuadro **Updates** la instala con **Update to …** (con el juego cerrado, comprobando la firma y cada archivo; tu configuración y tus fuentes se conservan) y **Go back to …** vuelve a la anterior. La DLL del juego nunca descarga ni instala nada. Para apagar los avisos, destildá "Show update notices (here and in the game)" y apretá **Apply**; **Check now** sigue andando. Los detalles, en inglés, en [Updates](#updates).
+
+**Desinstalar:** en `hdtext.exe`, si agregaste idiomas, borralos con **Remove** en **Languages**; después, en **Font**, elegí **Original (mod off)** y apretá **Apply**. Borrá la línea de `pes6_hd_text.dll` de `kload.cfg` (y la de `translations.dll`, si agregaste idiomas), bajá `DLL.num` en la cantidad de líneas que borraste y borrá `pes6_hd_text.dll`, `hdtext.exe`, `hdtext.cfg`, `translations.dll` (si está), la carpeta `Kitserver\pes6pkg` y las fuentes `HD_*.bin` de `Kitserver\GDB\fonts` (dejá la carpeta `backup`: tiene tus fuentes anteriores). No dejes una fuente HD instalada sin la DLL: el juego la carga igual, pero sin la DLL dibuja cada letra al tamaño HD de la fuente y todos los textos salen varias veces más grandes.
 
 **¿Hacés fuentes o mods?** Las fuentes HD son bienvenidas: el formato está en [For font makers](#for-font-makers). Si tu mod engancha alguna función del juego, fijate la lista en [For mod makers](#for-mod-makers-hooked-functions) y coordinemos para no pisarnos.
 
