@@ -4,6 +4,19 @@ All notable changes to PES6 HD Text are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.2.1] - 2026-11-23
+
+The 1.0.2, clearer to install. Already have 1.0.2? Press **Update to 1.0.2.1** in `hdtext.exe`.
+
+### Changed
+
+- **Languages tab: "Load a language file (.zip)…".** The button, the line under it and the file dialog say it plainly: load the language's `.zip` as you downloaded it, without unzipping it.
+- **The README starts with how to install:** extract the whole zip and double-click `Kitserver\hdtext.exe`, the installer.
+
+### Fixed
+
+- **Picking something that isn't a language's `.zip` now says what to load.** Before, the unzipped folder, a file from inside it (such as `ru_text.afs`) or another zip were ignored or called "damaged" or "not signed". If you drop several things at once, the zips are loaded and the rest is reported.
+
 ## [1.0.2] - 2026-11-21
 
 From now on, PES6 HD Text can update itself, and it can add extra languages to the game. This version is installed with the new installer (or by hand, as before); the next ones arrive with the **Update** button of `hdtext.exe`.
